@@ -1,4 +1,4 @@
-package edu.edu.cvds;
+package edu.cvds;
 
 /**
  * Hello world!
