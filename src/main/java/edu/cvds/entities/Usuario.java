@@ -1,24 +1,29 @@
 package edu.cvds.entities;
 
-public class Usuario {
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class Usuario implements Serializable{
 	private String userName;
 	private String estado;
 	private String rol;
 	private String correo;
 	private String contrasena;
 	private String nombreCompleto;
+	private ArrayList<Novedad> novedades;
 	
 	public Usuario() {
 		super();
 	}
 
-	public Usuario(String userName, String estado,String rol,String correo,String contrasena,String nombreCompleto) {
+	public Usuario(String userName, String estado,String rol,String correo,String contrasena,String nombreCompleto,ArrayList<Novedad> novedades) {
 		this.setUserName(userName);
 		this.setEstado(estado);
 		this.setRol(rol);
 		this.setCorreo(correo);
 		this.setContrasena(contrasena);
 		this.setNombreCompleto(nombreCompleto);
+		this.setNovedades(novedades);
 	}
 
 	public String getUserName() {
@@ -67,6 +72,14 @@ public class Usuario {
 
 	public void setNombreCompleto(String nombreCompleto) {
 		this.nombreCompleto = nombreCompleto;
+	}
+
+	public ArrayList<Novedad> getNovedades() {
+		return novedades;
+	}
+
+	public void setNovedades(ArrayList<Novedad> novedades) {
+		this.novedades = novedades;
 	}
 	
 }

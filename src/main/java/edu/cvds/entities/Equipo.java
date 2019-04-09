@@ -1,16 +1,23 @@
 package edu.cvds.entities;
 
-public class Equipo {
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class Equipo implements Serializable{
 	private int id;
 	private String laboratorioId;
+	private ArrayList<Elemento> elementos;
+	private ArrayList<Novedad> novedades;
 	
 	public Equipo() {
 		super();
 	}
 
-	public Equipo(int id, String laboratorioId) {
+	public Equipo(int id, String laboratorioId, ArrayList<Elemento> elementos, ArrayList<Novedad> novedades) {
 		this.setId(id);
 		this.setLaboratorioId(laboratorioId);
+		this.setElementos(elementos);
+		this.setNovedades(novedades);
 	}
 
 	public int getId() {
@@ -27,5 +34,21 @@ public class Equipo {
 
 	public void setLaboratorioId(String laboratorioId) {
 		this.laboratorioId = laboratorioId;
+	}
+
+	public ArrayList<Elemento> getElementos() {
+		return elementos;
+	}
+
+	public void setElementos(ArrayList<Elemento> elementos) {
+		this.elementos = elementos;
+	}
+
+	public ArrayList<Novedad> getNovedades() {
+		return novedades;
+	}
+
+	public void setNovedades(ArrayList<Novedad> novedades) {
+		this.novedades = novedades;
 	}
 }

@@ -3,12 +3,54 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="edu.eci.cvds.persistence.mybatisimpl.mappers.DecanaturaMapper">
+<mapper namespace="edu.cvds.persistence.mybatisimpl.mappers.LaboratorioMapper">
 
-	<resultMap type='Decanatura' id='DecanaturaResult'>
+	<resultMap type='Laboratorio' id='LaboratorioResult'>
 		<id property='id' column='id' />
 		<result property='nombre' column='nombre' />
-		<result property='decano' column='decano' />
-		<result property='paginaWeb' column='pagina_web' />
+		<result property='descripcion' column='descripcion' />
+		<result property='capacidadDeEquipos' column='capacidadequipos' />
+		<collection property='equipos' ofType='Equipo'></collection>
 	</resultMap>
+	
+	
+	<resultMap type='Equipo' id='EquipoResult'>
+		<id property='id' column='id' />
+		<result property='laboratorioId' column='LaboratorioID'/>
+		<collection property='elementos' ofType='Elemento'></collection>
+		<collection property='novedades' ofType='Novedad'></collection>
+	</resultMap>
+	
+	
+	<resultMap type='Usuario' id='UsuarioResult'>
+		<id property='userName' column='username' />
+		<result property='estado' column='estado' />
+		<result property='rol' column='rol' />
+		<result property='correo' column='correo' />
+		<result property='contrasena' column='contraseña' />
+		<result property='nombreCompleto' column='nombrecompleto' />
+		<collection property='novedades' ofType='Novedad'></collection>
+	</resultMap>
+	
+
+	<resultMap type='Elemento' id='ElementoResult'>
+		<id property='id' column='id' />
+		<result property='tipo' column='tipo' />
+		<result property='equipo' column='equipoID'/>
+		<collection property='novedades' ofType='Novedad'></collection>
+	</resultMap>
+	
+	
+	<resultMap type='Novedad' id='NovedadResult'>
+		<id property='id' column='id' />
+		<result property='elementoId' column='elementoID'/>
+		<result property='equipoId' column='equipoID'/>
+		<result property='usuarioId' column='usuarioID'/>
+		<result property='fecha' column='fecha' />
+		<result property='detalle' column='detalle' />
+		<result property='titulo' column='titulo' />
+	</resultMap>
+	
+	
+	
 </mapper>
