@@ -10,14 +10,15 @@ import org.mybatis.guice.datasource.helper.JdbcHelper;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 
-/*
-import edu.eci.cvds.persistence.DecanaturaDAO;
-import edu.eci.cvds.persistence.ProgramaDAO;
-import edu.eci.cvds.persistence.mybatisimpl.MyBatisDecanaturaDAO;
-import edu.eci.cvds.persistence.mybatisimpl.MyBatisProgramaDAO;
-import edu.eci.cvds.services.DecanaturaServices;
-import edu.eci.cvds.services.impl.DecanaturaServicesImpl;
-*/
+import edu.cvds.persistence.ElementoDAO;
+import edu.cvds.persistence.EquipoDAO;
+import edu.cvds.persistence.*;
+import edu.cvds.persistence.mybatisimpl.*;
+import edu.cvds.persistence.mybatisimpl.MyBatisUsuarioDAO;
+import edu.cvds.services.LaboratorioServices;
+import edu.cvds.services.impl.LaboratorioServicesImpl;
+
+
 
 public class GuiceContextListener implements ServletContextListener {
 
@@ -36,12 +37,13 @@ public class GuiceContextListener implements ServletContextListener {
 				setEnvironmentId("development");
 
 				setClassPathResource("mybatis-config.xml");
-				/*
-				// Decanatura
-                bind(DecanaturaServices.class).to(DecanaturaServicesImpl.class);
-                bind(DecanaturaDAO.class).to(MyBatisDecanaturaDAO.class);
-				// Programa
-                bind(ProgramaDAO.class).to(MyBatisProgramaDAO.class);*/
+				
+                bind(LaboratorioServices.class).to(LaboratorioServicesImpl.class);
+                bind(UsuarioDAO.class).to(MyBatisUsuarioDAO.class);
+                bind(ElementoDAO.class).to(MyBatisElementoDAO.class);
+                bind(EquipoDAO.class).to(MyBatisEquipoDAO.class);
+                bind(NovedadDAO.class).to(MyBatisNovedadDAO.class);
+                bind(LaboratorioDAO.class).to(MyBatisLaboratorioDAO.class);
 			}
 		}
 
