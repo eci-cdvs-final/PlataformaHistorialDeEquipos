@@ -1,5 +1,5 @@
 package edu.cvds.managedbeans;
 
-public class ElementoBean {
+public class ElementoBean extends BasePageBean  {
 
 }

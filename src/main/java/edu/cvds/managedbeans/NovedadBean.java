@@ -1,5 +1,5 @@
 package edu.cvds.managedbeans;
 
-public class NovedadBean {
+public class NovedadBean extends BasePageBean {
 
 }

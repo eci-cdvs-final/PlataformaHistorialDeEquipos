@@ -10,20 +10,25 @@
 </h:head>
 <h:body>
 	<h1>Plataforma Historial de Equipos</h1>
-	<p:dataTable id="dec_table" var="decanatura" value="#{UsuarioBean.decanaturas}">
-		<p:column headerText="Username">
-			<h:outputText value="#{decanatura.nombre}" />
-		</p:column>
-		<p:column headerText="Decano">
-			<h:outputText value="#{decanatura.decano}" />
-		</p:column>
-		<p:column headerText="Pagina Web">
-			<h:outputLink value="#{decanatura.paginaWeb}">Página Web</h:outputLink>
-		</p:column>
-		<p:column headerText="Programas">
-			<p:button outcome="programa?decanatura=#{decanatura.id}" value="Ver Programas" />
-		</p:column>
-	</p:dataTable>
+	
+	
+	<p:fieldset legend="Ingreso" style="margin-bottom:20px">
+        <h:panelGrid columns="2" cellpadding="10">
+            <h:outputText value="Usuario: " />
+			<p:inputText id="username"/>
+			<h:outputText value="Contraseña: " />
+		        <p:password id="nonFeedback" value="#{UsuarioBean.password}" />
+		   <h:form> 
+		      <p:commandLink id="login" action="#{usuarioBean.login}" style="margin-right:20px;" ajax="false">
+        			<h:outputText value="Login" />
+   	 		</p:commandLink>   
+			</h:form>
+		        
+        </h:panelGrid>
+    </p:fieldset>
+	
+	
+	
 </h:body>
 </html>
 

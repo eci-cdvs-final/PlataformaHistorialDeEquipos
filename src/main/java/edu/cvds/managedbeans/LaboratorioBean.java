@@ -1,5 +1,5 @@
 package edu.cvds.managedbeans;
 
-public class LaboratorioBean {
+public class LaboratorioBean extends BasePageBean {
 
 }

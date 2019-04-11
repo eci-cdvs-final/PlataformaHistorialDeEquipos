@@ -1,5 +1,5 @@
 package edu.cvds.managedbeans;
 
-public class EquipoBean {
+public class EquipoBean extends BasePageBean {
 
 }
