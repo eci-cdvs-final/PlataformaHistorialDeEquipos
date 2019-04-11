@@ -6,7 +6,6 @@ import edu.cvds.persistence.mybatisimpl.mappers.EquipoMapper;
 
 public class MyBatisEquipoDAO implements EquipoDAO {
 	
-	@Inject
 	private EquipoMapper equipoMapper;
 
 }

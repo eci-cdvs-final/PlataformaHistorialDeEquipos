@@ -32,7 +32,7 @@ public class GuiceContextListener implements ServletContextListener {
 			@Override
 			protected void initialize() {
 
-				install(JdbcHelper.MySQL);
+				install(JdbcHelper.PostgreSQL);
 
 				setEnvironmentId("development");
 

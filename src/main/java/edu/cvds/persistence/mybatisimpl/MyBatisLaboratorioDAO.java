@@ -6,7 +6,6 @@ import edu.cvds.persistence.mybatisimpl.mappers.LaboratorioMapper;
 
 public class MyBatisLaboratorioDAO implements LaboratorioDAO {
 	
-	@Inject
 	private LaboratorioMapper laboratorioMapper;
 
 }

@@ -6,7 +6,6 @@ import edu.cvds.persistence.mybatisimpl.mappers.NovedadMapper;
 
 public class MyBatisNovedadDAO implements NovedadDAO {
 	
-	@Inject
 	private NovedadMapper novedadMapper;
 
 }

@@ -6,6 +6,5 @@ import edu.cvds.persistence.mybatisimpl.mappers.ElementoMapper;
 
 public class MyBatisElementoDAO implements ElementoDAO {
 
-	@Inject
 	private ElementoMapper elementoMapper;
 }

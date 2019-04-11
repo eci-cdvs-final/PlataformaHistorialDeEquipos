@@ -20,7 +20,7 @@
     <welcome-file>faces/index.xhtml</welcome-file>
   </welcome-file-list>
   <listener>
-    <listener-class>edu.eci.cvds.guice.GuiceContextListener</listener-class>
+    <listener-class>edu.cvds.guice.GuiceContextListener</listener-class>
   </listener>
   
   
