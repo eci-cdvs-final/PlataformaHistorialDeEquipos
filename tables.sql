@@ -1,3 +1,4 @@
+
 create table laboratorio
 	(id varchar(10) primary key,
 	nombre varchar(30) not null,
@@ -5,12 +6,7 @@ create table laboratorio
 	capacidadequipos integer not null);
 
 
-create table usuario(username varchar(50) primary key,
-					estado varchar(10) not null,
-					rol varchar(20) not null,
-					correo varchar(100) not null, 
-					contraseña varchar(50) not null, 
-					nombrecompleto varchar(100) not null );
+
 				
 create table equipo(id integer primary key,
 					laboratorioID varchar(10),
@@ -25,9 +21,18 @@ create table elemento(id INTEGER primary key,
 					FOREIGN KEY (equipoID) REFERENCES equipo(id)
 					);
 				
+
+create table usuario(username varchar(50) primary key,
+					estado varchar(10) not null,
+					rol varchar(20) not null,
+					correo varchar(100) not null, 
+					nombrecompleto varchar(100) not null ,
+					contrasena varchar(254) not null, 
+					);
+
 create table novedad(id integer primary key,	
-					elementoID varchar(10),
-					equipoID varchar(10),
+					elementoID integer,
+					equipoID integer,
 					fecha DATE not null,
 					titulo varchar(200) not null,
 					usuarioID varchar(50) not null,
@@ -45,12 +50,13 @@ check (tipo in ('Mouse','Teclado','Torre','Pantalla'));
 
 alter table usuario add constraint ck_correo
 check (correo like '%@%.%');
-
 alter table usuario add constraint ck_estados
 check (estado in ('Activo','Inactivo'));
-
 alter table usuario add constraint ck_rol
-check (rol in ('Profesor','Decano','Monitor','Estudiante'));
+check (rol in ('Profesor','Decano','Monitor','Administrativo'));
+
+insert into usuario values('claudia.santiago','Activo','Profesor','claudia.santiago@escuelaing.edu.co','60fe74406e7f353ed979f350f2fbb6a2e8690a5fa7d1b0c32983d1d8b3f95f67','CLAUDIA PATRICIA SANTIAGO CELY');
+
 
 	
 				
