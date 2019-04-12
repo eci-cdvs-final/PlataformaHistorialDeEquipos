@@ -29,6 +29,7 @@
 
 	<mappers>
 		<mapper resource="mappers/LaboratorioMapper.xml"></mapper>
+		<mapper resource="mappers/UsuarioMapper.xml"></mapper>
 	</mappers>
 
 </configuration>

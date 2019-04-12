@@ -19,7 +19,7 @@ import com.google.inject.Injector;
 import edu.cvds.entities.Usuario;
 import edu.cvds.services.LaboratorioServices;
 
-@SuppressWarnings("deprecation")
+
 @ManagedBean(name = "usuarioBean")
 @SessionScoped
 public class UsuarioBean extends BasePageBean  {
@@ -40,7 +40,7 @@ public class UsuarioBean extends BasePageBean  {
 	public void login() {
 		
 		try {
-			
+		
 			Subject currentUser = SecurityUtils.getSubject();
 			
 			String encript = new Sha256Hash(password).toHex();
@@ -58,11 +58,16 @@ public class UsuarioBean extends BasePageBean  {
 		    //password didn't match, try again?
 			FacesContext context = FacesContext.getCurrentInstance();
 	        context.addMessage(null, new FacesMessage("Error","Contraseña incorrecta") );
-		} 
+		}
+		catch ( IOException e ) {
+			FacesContext context = FacesContext.getCurrentInstance();
+	        context.addMessage(null, new FacesMessage("Error", "Error de entrada"));
+		}
 		catch ( Exception e ) {
 			FacesContext context = FacesContext.getCurrentInstance();
 	        context.addMessage(null, new FacesMessage("Error", e.getMessage()));
 		}
+		
 	}
 	
 	

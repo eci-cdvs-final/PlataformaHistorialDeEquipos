@@ -3,10 +3,12 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="com.registerLab.mappers.UsuarioMapper">
-	<select id="getUsuario" parameterType="map" resultMap="UsuarioResult">
+<mapper namespace="edu.cvds.persistence.mybatisimpl.mappers.UsuarioMapper">
+
+	<select id="getUsuario" parameterType="String" resultMap="UsuarioResult">
 		SELECT * FROM usuario WHERE username=#{username}
 	</select>
+	
 	<resultMap type='Usuario' id='UsuarioResult'>
 		<id property='userName' column='username' />
 		<result property='estado' column='estado' />

@@ -8,6 +8,7 @@ import edu.cvds.persistence.mybatisimpl.mappers.UsuarioMapper;
 
 public class MyBatisUsuarioDAO implements UsuarioDAO {
 	
+	@Inject
 	private UsuarioMapper usuarioMapper;
 
 	@Override
