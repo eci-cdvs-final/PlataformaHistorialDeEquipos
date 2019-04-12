@@ -8,11 +8,12 @@
 		SELECT * FROM usuario WHERE username=#{username}
 	</select>
 	<resultMap type='Usuario' id='UsuarioResult'>
-	    <id property='id' column='carnet'/>
-	    <result property="nombre" column="nombre"></result>
-	    <result property="apellido" column="apellido"></result>
-	    <result property="correo" column="correo"></result>
-	    <result property="rol" column="rol"/>
-	    <result property="contra" column="contra"/>       
+		<id property='userName' column='username' />
+		<result property='estado' column='estado' />
+		<result property='rol' column='rol' />
+		<result property='correo' column='correo' />
+		<result property='contrasena' column='contraseña' />
+		<result property='nombreCompleto' column='nombrecompleto' />
+		<collection property='novedades' ofType='Novedad'></collection>
 	</resultMap>
 </mapper>
