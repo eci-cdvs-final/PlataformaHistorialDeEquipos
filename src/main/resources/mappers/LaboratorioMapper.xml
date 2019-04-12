@@ -52,5 +52,14 @@
 	</resultMap>
 	
 	
+	<select id="buscarEquipos" resultMap="EquipoResult"
+		parameterType="int">
+		SELECT
+			e.id
+		FROM
+			EQUIPO as e
+	</select>
+	
+	
 	
 </mapper>
