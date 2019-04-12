@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="edu.cvds.persistence.mybatisimpl.mappers.EquipoMapper">
+
+	<resultMap type='Equipo' id='EquipoResult'>
+		<id property='id' column='id' />
+		<result property='laboratorioId' column='LaboratorioID'/>
+		<collection property='elementos' ofType='Elemento'></collection>
+		<collection property='novedades' ofType='Novedad'></collection>
+	</resultMap>
+	
+	<select id="buscarEquipos" resultMap="EquipoResult"
+		parameterType="int">
+		SELECT
+			e.id
+		FROM
+			EQUIPO as e
+	</select>
+	
+	</mapper>

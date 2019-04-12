@@ -30,6 +30,7 @@
 	<mappers>
 		<mapper resource="mappers/LaboratorioMapper.xml"></mapper>
 		<mapper resource="mappers/UsuarioMapper.xml"></mapper>
+		<mapper resource="mappers/EquipoMapper.xml"></mapper>
 	</mappers>
 
 </configuration>
