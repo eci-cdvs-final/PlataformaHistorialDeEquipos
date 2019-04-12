@@ -9,7 +9,7 @@ create table usuario(username varchar(50) primary key,
 					estado varchar(10) not null,
 					rol varchar(20) not null,
 					correo varchar(100) not null, 
-					contraseÃ±a varchar(50) not null, 
+					contraseña varchar(300) not null, 
 					nombrecompleto varchar(100) not null );
 				
 create table equipo(id integer primary key,
@@ -25,9 +25,10 @@ create table elemento(id INTEGER primary key,
 					FOREIGN KEY (equipoID) REFERENCES equipo(id)
 					);
 				
+
 create table novedad(id integer primary key,	
-					elementoID varchar(10),
-					equipoID varchar(10),
+					elementoID integer,
+					equipoID integer,
 					fecha DATE not null,
 					titulo varchar(200) not null,
 					usuarioID varchar(50) not null,
@@ -45,12 +46,10 @@ check (tipo in ('Mouse','Teclado','Torre','Pantalla'));
 
 alter table usuario add constraint ck_correo
 check (correo like '%@%.%');
-
 alter table usuario add constraint ck_estados
 check (estado in ('Activo','Inactivo'));
-
 alter table usuario add constraint ck_rol
-check (rol in ('Profesor','Decano','Monitor','Estudiante'));
+check (rol in ('Profesor','Decano','Monitor','Administrativo'));
 
 	
 				
