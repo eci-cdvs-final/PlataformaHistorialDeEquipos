@@ -19,11 +19,11 @@
 #### Arquitectura y Diseño detallado:
 * Modelo E-R.
 
-![](img/ModeloE-R.png)
+![](img/ModeloE-R.png) 
 
 * Diagrama de clases (hacerlo mediante ingeniería inversa)
 * Descripción de la arquitectura (capas) y del Stack de tecnologías utilizado (PrimeFaces, Guice, QuickTheories, PostgreSQL).
-* https://plataformashisorialequipo.herokuapp.com/
+* https://plataformashisorialequipo.herokuapp.com/faces/login.xhtml
 * Enlace al sistema de integración continua.
 #### Descripción del proceso:
 * Integrantes.
