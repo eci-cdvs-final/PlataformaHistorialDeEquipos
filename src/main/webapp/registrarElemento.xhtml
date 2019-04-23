@@ -22,6 +22,21 @@
         </h:commandLink> 
 	</h:form>
 	
-	
+	<h:panelGrid columns="2" cellpadding="10">
+		<h:outputText value="ID: " />
+		<h:inputText value="#{elementoBean.id} "/>
+		
+		<p:outputLabel value="Tipo:" />
+		<h:inputText value="#{elementoBean.tipo}"/>
+		
+		<h:outputText value="Marca: " />
+		<h:inputText value="#{elementoBean.marca}"/>
+		
+		<h:form>
+			<h:commandLink value="Registrar Elemento" actionListener="#{elementoBean.registrarElemento()}" style="margin-right:20px; ">
+			</h:commandLink>
+		</h:form>
+		
+     </h:panelGrid>
 </h:body>
 </html>

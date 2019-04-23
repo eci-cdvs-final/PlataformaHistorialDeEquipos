@@ -8,6 +8,9 @@ import edu.cvds.entities.Equipo;
 public interface LaboratorioServices {
 
 	public List<Equipo> listarEquipos();
-	Usuario getUsuario(String username);
+	
+	public Usuario getUsuario(String username);
+	
+	public void registrarElemento(int id, String tipo, String marca);
 
-}
+}	

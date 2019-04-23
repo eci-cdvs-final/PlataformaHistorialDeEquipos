@@ -2,6 +2,7 @@ package edu.cvds.services.impl;
 
 
 import edu.cvds.entities.Equipo;
+import edu.cvds.persistence.ElementoDAO;
 import edu.cvds.persistence.EquipoDAO;
 
 import edu.cvds.entities.Usuario;
@@ -30,7 +31,13 @@ public class LaboratorioServicesImpl implements LaboratorioServices {
 		return equipoDAO.listarTodas();
 	}
 	
-	/*@Inject
-	private DecanaturaDAO decanaturaDAO;*/
+	@Inject
+	private ElementoDAO elementoDAO;
+
+	@Override
+	public void registrarElemento(int id, String tipo, String marca) {
+		elementoDAO.registrarElemento(id,tipo,marca);
+		
+	}
 
 }

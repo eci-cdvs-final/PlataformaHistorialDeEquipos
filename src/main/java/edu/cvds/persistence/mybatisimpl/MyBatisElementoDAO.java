@@ -6,5 +6,11 @@ import edu.cvds.persistence.mybatisimpl.mappers.ElementoMapper;
 
 public class MyBatisElementoDAO implements ElementoDAO {
 
+	@Inject
 	private ElementoMapper elementoMapper;
+
+	@Override
+	public void registrarElemento(int id, String tipo, String marca) {
+		elementoMapper.registrarElemento(id,tipo,marca);
+	}
 }
