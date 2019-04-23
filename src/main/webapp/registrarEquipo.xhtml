@@ -9,7 +9,17 @@
 	<title></title>
 </h:head>
 <h:body>
-	<h1>Registrar Elemeto </h1>
+	<h1>Registrar Equipo</h1>
+	
+	 <h:panelGrid columns="2" cellpadding="10">
+            <h:outputText value="ID: " />
+			<h:inputText value="#{equipoBean.id}"/>
+		   
+		      <h:commandLink value="Registrar" actionListener="#{equipoBean.registrar()}" style="margin-right:20px;">
+   	 		</h:commandLink>   
+			
+		        
+        </h:panelGrid>
 	
 	<p:dataTable id="equi_table" var="equipo" value="#{equipoBean.equipos}">
 		<p:column headerText="Equipos Disponibles">
@@ -22,6 +32,6 @@
         </h:commandLink> 
 	</h:form>
 	
-	-
+	
 </h:body>
 </html>

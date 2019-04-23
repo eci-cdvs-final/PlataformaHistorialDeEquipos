@@ -7,5 +7,7 @@ import edu.cvds.entities.Equipo;
 public interface EquipoDAO {
 
 	public List<Equipo> listarTodas();
+	
+	public void registar(int id);
 
 }

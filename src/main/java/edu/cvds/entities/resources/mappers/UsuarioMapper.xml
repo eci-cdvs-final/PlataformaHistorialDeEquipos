@@ -14,7 +14,7 @@
 		<result property='estado' column='estado' />
 		<result property='rol' column='rol' />
 		<result property='correo' column='correo' />
-		<result property='contrasena' column='contraseña' />
+		<result property='contrasena' column='contrasena' />
 		<result property='nombreCompleto' column='nombrecompleto' />
 		<collection property='novedades' ofType='Novedad'></collection>
 	</resultMap>

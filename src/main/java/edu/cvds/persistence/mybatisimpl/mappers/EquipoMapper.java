@@ -9,5 +9,7 @@ import edu.cvds.entities.Equipo;
 public interface EquipoMapper {
 
 	public List<Equipo> buscarEquipos();
-
+	
+	
+	public void registrarEquipo(@Param("id") int id);
 }

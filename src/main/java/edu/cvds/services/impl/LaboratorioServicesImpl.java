@@ -29,6 +29,11 @@ public class LaboratorioServicesImpl implements LaboratorioServices {
 	public List<Equipo> listarEquipos() {
 		return equipoDAO.listarTodas();
 	}
+
+	@Override
+	public void registrarEquipo(int id) {
+		equipoDAO.registar(id);
+	}
 	
 	/*@Inject
 	private DecanaturaDAO decanaturaDAO;*/

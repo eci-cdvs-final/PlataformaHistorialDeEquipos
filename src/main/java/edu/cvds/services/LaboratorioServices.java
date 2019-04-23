@@ -10,4 +10,7 @@ public interface LaboratorioServices {
 	public List<Equipo> listarEquipos();
 	Usuario getUsuario(String username);
 
+	public void registrarEquipo(int id);
+	
+	
 }

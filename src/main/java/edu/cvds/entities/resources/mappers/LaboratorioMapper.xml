@@ -10,6 +10,7 @@
 		<result property='nombre' column='nombre' />
 		<result property='descripcion' column='descripcion' />
 		<result property='capacidadDeEquipos' column='capacidadequipos' />
+		<result property='activo' column='activo' />
 		<collection property='equipos' ofType='Equipo'></collection>
 	</resultMap>
 	
@@ -17,8 +18,10 @@
 	<resultMap type='Equipo' id='EquipoResult'>
 		<id property='id' column='id' />
 		<result property='laboratorioId' column='LaboratorioID'/>
+		<result property='activo' column='activo'/>
 		<collection property='elementos' ofType='Elemento'></collection>
 		<collection property='novedades' ofType='Novedad'></collection>
+		
 	</resultMap>
 	
 	
@@ -36,16 +39,18 @@
 	<resultMap type='Elemento' id='ElementoResult'>
 		<id property='id' column='id' />
 		<result property='tipo' column='tipo' />
-		<result property='equipo' column='equipoID'/>
+		<result property='equipo' column='equipoid'/>
+		<result property='activo' column='activo' />
+		<result property='marca' column='marca' />
 		<collection property='novedades' ofType='Novedad'></collection>
 	</resultMap>
 	
 	
 	<resultMap type='Novedad' id='NovedadResult'>
 		<id property='id' column='id' />
-		<result property='elementoId' column='elementoID'/>
-		<result property='equipoId' column='equipoID'/>
-		<result property='usuarioId' column='usuarioID'/>
+		<result property='elementoId' column='elementoid'/>
+		<result property='equipoId' column='equipoid'/>
+		<result property='usuarioId' column='usuarioid'/>
 		<result property='fecha' column='fecha' />
 		<result property='detalle' column='detalle' />
 		<result property='titulo' column='titulo' />

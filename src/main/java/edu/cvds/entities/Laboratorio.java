@@ -8,17 +8,19 @@ public class Laboratorio implements Serializable{
 	private String nombre;
 	private String descripcion;
 	private int capacidadDeEquipos;
+	private boolean activo;
 	private ArrayList<Equipo> equipos; 
 	
 	public Laboratorio() {
 		super();
 	}
 	
-	public Laboratorio(String id, String nombre, String descripcion, int capacidadDeEquipos,ArrayList<Equipo> equipo) {
+	public Laboratorio(String id, String nombre, String descripcion, int capacidadDeEquipos,boolean activo,ArrayList<Equipo> equipo) {
 		this.id = id;
 		this.nombre = nombre;
 		this.descripcion = descripcion;
 		this.capacidadDeEquipos = capacidadDeEquipos;
+		this.activo= activo;
 		this.setEquipos(equipo);
 	}
 	
@@ -53,5 +55,13 @@ public class Laboratorio implements Serializable{
 	
 	public void setEquipos(ArrayList<Equipo> equipo) {
 		this.equipos = equipo;
+	}
+
+	public boolean isActivo() {
+		return activo;
+	}
+
+	public void setActivo(boolean activo) {
+		this.activo = activo;
 	}	
 }

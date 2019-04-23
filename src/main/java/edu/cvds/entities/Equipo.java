@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class Equipo implements Serializable{
 	private int id;
 	private String laboratorioId;
+	private boolean activo;
 	private ArrayList<Elemento> elementos;
 	private ArrayList<Novedad> novedades;
 	
@@ -13,9 +14,10 @@ public class Equipo implements Serializable{
 		super();
 	}
 
-	public Equipo(int id, String laboratorioId, ArrayList<Elemento> elementos, ArrayList<Novedad> novedades) {
+	public Equipo(int id, String laboratorioId,boolean activo, ArrayList<Elemento> elementos, ArrayList<Novedad> novedades) {
 		this.setId(id);
 		this.setLaboratorioId(laboratorioId);
+		this.setActivo(activo);
 		this.setElementos(elementos);
 		this.setNovedades(novedades);
 	}
@@ -50,5 +52,13 @@ public class Equipo implements Serializable{
 
 	public void setNovedades(ArrayList<Novedad> novedades) {
 		this.novedades = novedades;
+	}
+
+	public boolean isActivo() {
+		return activo;
+	}
+
+	public void setActivo(boolean activo) {
+		this.activo = activo;
 	}
 }
