@@ -10,13 +10,19 @@
 	<title></title>                                                   
 </h:head>
 <h:body>
-<h1>Bienvenido al menú principal</h1>
+<h1>Bienvenid@ al menú principal  #{usuarioBean.getUsuario().getNombreCompleto()}</h1>
+
  <h:form>  
 <p:menu>
         <p:submenu label="Registro">
             <p:menuitem value="Registrar Elemento" action="#{usuarioBean.gotoRegistrarElemento()}"  />
         </p:submenu>
+        
+          
     </p:menu>
+    
+    <h:commandLink value="Logout" actionListener="#{usuarioBean.logout()}" style="margin-right:20px;">
+        </h:commandLink> 
 </h:form>
 </h:body>
 </html>
