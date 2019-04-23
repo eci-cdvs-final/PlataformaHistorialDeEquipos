@@ -18,6 +18,7 @@
 * Imágenes y descripción de las funcionalidades más importantes
 #### Arquitectura y Diseño detallado:
 * Modelo E-R.
+![](img/ModeloE-R)
 * Diagrama de clases (hacerlo mediante ingeniería inversa)
 * Descripción de la arquitectura (capas) y del Stack de tecnologías utilizado (PrimeFaces, Guice, QuickTheories, PostgreSQL).
 * Enlace a la aplicación en Heroku.
