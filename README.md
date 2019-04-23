@@ -19,7 +19,7 @@
 #### Arquitectura y Diseño detallado:
 * Modelo E-R.
 
-![](img/ModeloE-R.png) 
+![](https://github.com/eci-cdvs-final/PlataformaHistorialDeEquipos/blob/master/img/ModeloE-R.PNG) 
 
 * Diagrama de clases (hacerlo mediante ingeniería inversa)
 * Descripción de la arquitectura (capas) y del Stack de tecnologías utilizado (PrimeFaces, Guice, QuickTheories, PostgreSQL).

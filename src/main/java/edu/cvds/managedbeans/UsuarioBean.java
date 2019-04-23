@@ -113,4 +113,13 @@ public class UsuarioBean extends BasePageBean  {
 		return user;
 	}
 	
+	
+	public void gotoRegistrarElemento() {
+		try {
+			FacesContext.getCurrentInstance().getExternalContext().redirect("registrarElemento.xhtml");
+		} catch (Exception e) {
+			FacesContext context = FacesContext.getCurrentInstance();
+	        context.addMessage(null, new FacesMessage("Error", e.getMessage()));
+		}
+	}
 }
