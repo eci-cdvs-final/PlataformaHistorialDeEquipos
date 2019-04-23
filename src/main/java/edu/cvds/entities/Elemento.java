@@ -7,6 +7,8 @@ public class Elemento implements Serializable{
 	private int id;
 	private String tipo; 
 	private String equipo;
+	private boolean activo;
+	private String marca;
 	private ArrayList<Novedad> novedades;
 	
 	public Elemento() {
@@ -50,5 +52,21 @@ public class Elemento implements Serializable{
 
 	public void setNovedades(ArrayList<Novedad> novedades) {
 		this.novedades = novedades;
+	}
+
+	public boolean isActivo() {
+		return activo;
+	}
+
+	public void setActivo(boolean activo) {
+		this.activo = activo;
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
 	}
 }

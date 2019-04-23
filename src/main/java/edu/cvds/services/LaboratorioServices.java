@@ -12,5 +12,6 @@ public interface LaboratorioServices {
 	public Usuario getUsuario(String username);
 	
 	public void registrarElemento(int id, String tipo, String marca);
-
+	
+	public void registrarEquipo(int id);
 }	

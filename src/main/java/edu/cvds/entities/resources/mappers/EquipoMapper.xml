@@ -7,9 +7,11 @@
 
 	<resultMap type='Equipo' id='EquipoResult'>
 		<id property='id' column='id' />
-		<result property='laboratorioId' column='LaboratorioID'/>
+		<result property='laboratorioId' column='Laboratorioid'/>
+		<result property='activo' column='activo'/>
 		<collection property='elementos' ofType='Elemento'></collection>
 		<collection property='novedades' ofType='Novedad'></collection>
+		
 	</resultMap>
 	
 	<select id="buscarEquipos" resultMap="EquipoResult"
@@ -19,5 +21,10 @@
 		FROM
 			EQUIPO as e
 	</select>
+	
+	
+	 <insert id="registrarEquipo" parameterType="edu.cvds.entities.Equipo">
+        insert into equipo(id, activo) values (#{id},True)
+    </insert>
 	
 	</mapper>

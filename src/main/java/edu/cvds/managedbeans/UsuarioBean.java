@@ -122,5 +122,15 @@ public class UsuarioBean extends BasePageBean  {
 	        context.addMessage(null, new FacesMessage("Error", e.getMessage()));
 		}
 	}
+	
+	
+	public void gotoRegistrarEquipo() {
+		try {
+			FacesContext.getCurrentInstance().getExternalContext().redirect("registrarEquipo.xhtml");
+		} catch (Exception e) {
+			FacesContext context = FacesContext.getCurrentInstance();
+	        context.addMessage(null, new FacesMessage("Error", e.getMessage()));
+		}
+	}
 
 }

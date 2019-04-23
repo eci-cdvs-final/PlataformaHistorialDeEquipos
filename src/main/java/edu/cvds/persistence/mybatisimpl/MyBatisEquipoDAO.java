@@ -18,4 +18,11 @@ public class MyBatisEquipoDAO implements EquipoDAO {
 		return equipoMapper.buscarEquipos();
 	}
 
+	@Override
+	public void registar(int id) {
+		
+		equipoMapper.registrarEquipo(id);
+		
+	}
+
 }
