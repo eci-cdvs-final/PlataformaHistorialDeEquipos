@@ -18,12 +18,12 @@
     <dependencies>
         <!-- My Batis dependencies -->
         <!-- https://mvnrepository.com/artifact/postgresql/postgresql -->
-	<dependency>
-	    <groupId>postgresql</groupId>
-	    <artifactId>postgresql</artifactId>
-	    <version>9.1-901-1.jdbc4</version>
-	</dependency>
-        
+
+        <dependency>
+		    <groupId>org.postgresql</groupId>
+		    <artifactId>postgresql</artifactId>
+		    <version>42.2.5</version>
+		</dependency>
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-guice</artifactId>
@@ -35,17 +35,20 @@
 			<version>3.4.6</version>
 		</dependency>
 <!-- 		TODO Required? -->
-		<dependency>
-		    <groupId>org.apache.shiro</groupId>
-		    <artifactId>shiro-core</artifactId>
-		    <version>1.4.0</version>
-		</dependency>
+		
 		<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
 		</dependency>
 
+		 <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.1.1</version>
+            <scope>provided</scope>
+        </dependency>
+			
 		<!-- Guice Dependencies -->
 		<dependency>
 			<groupId>com.google.inject</groupId>
@@ -112,12 +115,51 @@
             <version>1.2.17</version>
             <type>zip</type>
         </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>apache-log4j-extras</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        
         <!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-web -->
+        <dependency>
+		    <groupId>org.apache.shiro</groupId>
+		    <artifactId>shiro-core</artifactId>
+		    <version>1.2.1</version>
+		</dependency>
+        
 		<dependency>
 		    <groupId>org.apache.shiro</groupId>
 		    <artifactId>shiro-web</artifactId>
-		    <version>1.4.0</version>
+		    <version>1.2.1</version>
 		</dependency>
+		
+		<dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-ehcache</artifactId>
+            <version>1.2.1</version>
+        </dependency>
+		
+		 <!--logging-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+            <version>1.7.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.0.7</version>
+            <scope>runtime</scope>
+        </dependency>
+		
         
     </dependencies>
     
@@ -161,7 +203,7 @@
                 </dependencies>
                 <configuration>
                     <driver>org.h2.Driver</driver>
-                    <url>jdbc:h2:file:./target/db/testdb;MODE=MYSQL</url>
+                    <url>jdbc:h2:file:./target/db/testdb;MODE=PostgreSQL</url>
                     <username>anonymous</username>
                     <password>anonymous</password>
                     <autocommit>false</autocommit>
