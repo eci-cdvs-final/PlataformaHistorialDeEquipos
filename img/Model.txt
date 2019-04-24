@@ -1,4 +1,0 @@
-@startuml
-Decanatura -right-> "*" Programa
-Programa -right> "*" Materia
-@enduml
