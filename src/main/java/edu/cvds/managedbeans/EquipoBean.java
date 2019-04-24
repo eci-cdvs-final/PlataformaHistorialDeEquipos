@@ -2,6 +2,7 @@ package edu.cvds.managedbeans;
 
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
@@ -35,8 +36,15 @@ public class EquipoBean extends BasePageBean {
 	}*/
 	
 	public void registrar() {
-		FacesContext context = FacesContext.getCurrentInstance();
-		laboratorioServices.registrarEquipo(id);
+		try {
+			FacesContext context = FacesContext.getCurrentInstance();
+			laboratorioServices.registrarEquipo(id);
+		}
+		catch(Exception e) {
+
+			FacesContext context = FacesContext.getCurrentInstance();
+	        context.addMessage("registrarEquipo.xhtml", new FacesMessage("Error", "Es posible que este tratando de ingresar una ID ya registrada"));
+		}
 	}
 
 	public List<Equipo> getEquipos() {

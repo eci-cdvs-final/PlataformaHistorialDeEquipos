@@ -10,7 +10,7 @@
 </h:head>
 <h:body>
 	<h1>Registrar Equipo</h1>
-	
+	<h:form>
 	 <h:panelGrid columns="2" cellpadding="10">
             <h:outputText value="ID: " />
 			<h:inputText value="#{equipoBean.id}"/>
@@ -27,8 +27,10 @@
 		</p:column>
 	</p:dataTable>
 	
-	<h:form> 
+	 
 	  <h:commandLink value="Logout" actionListener="#{usuarioBean.logout()}" style="margin-right:20px;">
+        </h:commandLink> 
+        <h:commandLink value="Regresar" actionListener="#{usuarioBean.regresar()}" style="margin-right:20px;">
         </h:commandLink> 
 	</h:form>
 	
