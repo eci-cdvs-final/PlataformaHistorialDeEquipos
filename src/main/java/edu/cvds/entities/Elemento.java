@@ -9,6 +9,7 @@ public class Elemento implements Serializable{
 	private String equipo;
 	private boolean activo;
 	private String marca;
+	private String nombre;
 	private ArrayList<Novedad> novedades;
 	
 	public Elemento() {
@@ -68,5 +69,13 @@ public class Elemento implements Serializable{
 
 	public void setMarca(String marca) {
 		this.marca = marca;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 }

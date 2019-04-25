@@ -5,8 +5,29 @@
 
 <mapper namespace="edu.cvds.persistence.mybatisimpl.mappers.ElementoMapper">
 
+	<resultMap type='Elemento' id='ElementoResult'>
+		<id property='id' column='id' />
+		<result property='tipo' column='tipo'/>
+		<result property='equipo' column='equipoid'/>
+		<result property='activo' column='activo'/>
+		<result property='marca' column='marca'/>
+		<result property='nombre' column='nombre' />
+		<collection property='novedades' ofType='Novedad'></collection>
+	</resultMap>
+	
+	<select id="listar" resultMap="ElementoResult"
+		parameterType="int">
+		SELECT
+			e.id,
+			e.tipo,
+			e.marca,
+			e.nombre
+		FROM
+			ELEMENTO as e
+	</select>
+
 	<insert id="registrarElemento" parameterType="edu.cvds.entities.Elemento">
-        insert into Elemento(id, tipo, equipoid, activo, marca) values (#{id}, #{tipo}, NULL, true, #{marca})
+        insert into Elemento(id, tipo, equipoid, activo, marca, nombre) values (#{id}, #{tipo}, NULL, true, #{marca}, #{nombre})
     </insert>
 	
 	</mapper>

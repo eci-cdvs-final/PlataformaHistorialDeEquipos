@@ -1,6 +1,7 @@
 package edu.cvds.services.impl;
 
 
+import edu.cvds.entities.Elemento;
 import edu.cvds.entities.Equipo;
 import edu.cvds.persistence.ElementoDAO;
 import edu.cvds.persistence.EquipoDAO;
@@ -32,17 +33,23 @@ public class LaboratorioServicesImpl implements LaboratorioServices {
 	}
 
 	@Override
-	public void registrarEquipo(int id) {
-		equipoDAO.registar(id);
+	public void registrarEquipo(int id,String nombre) {
+		
+		equipoDAO.registar(id,nombre);
 	}
 	
 	@Inject
 	private ElementoDAO elementoDAO;
 
 	@Override
-	public void registrarElemento(int id, String tipo, String marca) {
-		elementoDAO.registrarElemento(id,tipo,marca);
+	public void registrarElemento(int id, String tipo, String marca,String nombre) {
+		elementoDAO.registrarElemento(id,tipo,marca,nombre);
 		
+	}
+
+	@Override
+	public List<Elemento> listarElementos() {
+		return elementoDAO.listarTodas();
 	}
 
 }

@@ -2,12 +2,15 @@ package edu.cvds.managedbeans;
 
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 import com.google.inject.Injector;
 
+import edu.cvds.entities.Elemento;
 import edu.cvds.entities.Equipo;
 import edu.cvds.services.LaboratorioServices;
 
@@ -21,15 +24,16 @@ public class ElementoBean extends BasePageBean  {
 	
 	@Inject
 	private LaboratorioServices laboratorioServices;
-	private Injector injector;
+	//private Injector injector;
 	private int id;
 	private String marca;
 	private String tipo;
+	private String nombre;
 	
-	public ElementoBean() {
+	/*public ElementoBean() {
 		injector = super.getInjector();
 		laboratorioServices = injector.getInstance(LaboratorioServices.class);
-	}
+	}*/
 
 	public int getId() {
 		return id;
@@ -55,7 +59,26 @@ public class ElementoBean extends BasePageBean  {
 		this.tipo = tipo;
 	}
 	
-	public void registrarElemento() {
-			laboratorioServices.registrarElemento(id, tipo, marca);
+	public List<Elemento> getElementos() {
+		return laboratorioServices.listarElementos();
+	}
+	
+	public void registrarElemento() {			
+			try {
+				FacesContext context = FacesContext.getCurrentInstance();
+				laboratorioServices.registrarElemento(id, tipo, marca,nombre);
+			}
+			catch(Exception e) {
+				FacesContext context = FacesContext.getCurrentInstance();
+		        context.addMessage(null, new FacesMessage("Error", "Es posible que este tratando de ingresar una ID ya registrada"));
+			}
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 }
