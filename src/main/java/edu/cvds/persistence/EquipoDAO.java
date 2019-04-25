@@ -8,6 +8,6 @@ public interface EquipoDAO {
 
 	public List<Equipo> listarTodas();
 	
-	public void registar(int id);
+	public void registar(int id, String nombre);
 
 }

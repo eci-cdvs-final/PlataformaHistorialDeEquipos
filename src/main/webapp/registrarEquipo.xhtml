@@ -14,6 +14,8 @@
 	 <h:panelGrid columns="2" cellpadding="10">
             <h:outputText value="ID: " />
 			<h:inputText value="#{equipoBean.id}"/>
+			 <h:outputText value="Nombre: " />
+			<h:inputText value="#{equipoBean.nombre}"/>
 		   
 		      <h:commandLink value="Registrar" actionListener="#{equipoBean.registrar()}" style="margin-right:20px;">
    	 		</h:commandLink>   
@@ -24,6 +26,9 @@
 	<p:dataTable id="equi_table" var="equipo" value="#{equipoBean.equipos}">
 		<p:column headerText="Equipos Disponibles">
 			<h:outputText value="#{equipo.id}" />
+		</p:column>
+		<p:column headerText="Nombre">
+			<h:outputText value="#{equipo.nombre}" />
 		</p:column>
 	</p:dataTable>
 	

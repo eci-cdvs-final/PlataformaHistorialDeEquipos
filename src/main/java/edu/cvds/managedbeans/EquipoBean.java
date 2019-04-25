@@ -28,6 +28,7 @@ public class EquipoBean extends BasePageBean {
 	
 	/*private Injector injector;*/
 	private int id;
+	private String nombre;
 
 	
 	/*public EquipoBean() {
@@ -38,7 +39,7 @@ public class EquipoBean extends BasePageBean {
 	public void registrar() {
 		try {
 			FacesContext context = FacesContext.getCurrentInstance();
-			laboratorioServices.registrarEquipo(id);
+			laboratorioServices.registrarEquipo(id,nombre);
 		}
 		catch(Exception e) {
 
@@ -59,6 +60,14 @@ public class EquipoBean extends BasePageBean {
 
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 

@@ -10,36 +10,52 @@
 </h:head>
 <h:body>
 	<h1>Registrar Elemeto </h1>
-	
-	<p:dataTable id="equi_table" var="equipo" value="#{equipoBean.equipos}">
-		<p:column headerText="Equipos Disponibles">
-			<h:outputText value="#{equipo.id}" />
-		</p:column>
-	</p:dataTable>
-	
 	<h:form> 
-	  <h:commandLink value="Logout" actionListener="#{usuarioBean.logout()}" style="margin-right:20px;">
-        </h:commandLink> 
-	</h:form>
+		<h:panelGrid columns="2" cellpadding="10">
+			<h:outputText value="ID: " />
+			<h:inputText value="#{elementoBean.id}"/>
+			
+			<p:outputLabel value="Tipo:" />
+			<p:selectOneMenu id="console" value="#{elementoBean.tipo}" style="width:125px">
+	            <f:selectItem itemLabel="Pantalla" itemValue="Pantalla" />
+	            <f:selectItem itemLabel="Torre" itemValue="Torre" />
+	            <f:selectItem itemLabel="Mouse" itemValue="Mouse" />
+	            <f:selectItem itemLabel="Teclado" itemValue="Teclado" />
+        </p:selectOneMenu>
+			
+			<h:outputText value="Marca: " />
+			<h:inputText value="#{elementoBean.marca}"/>
+			
+			<h:outputText value="Nombre: " />
+			<h:inputText value="#{elementoBean.nombre}"/>
+		
 	
-	<h:panelGrid columns="2" cellpadding="10">
-		<h:outputText value="ID: " />
-		<h:inputText value="#{elementoBean.id} "/>
-		
-		<p:outputLabel value="Tipo:" />
-		<h:inputText value="#{elementoBean.tipo}"/>
-		
-		<h:outputText value="Marca: " />
-		<h:inputText value="#{elementoBean.marca}"/>
-		
-		<h:form>
 			<h:commandLink value="Registrar Elemento" actionListener="#{elementoBean.registrarElemento()}" style="margin-right:20px; ">
 			</h:commandLink>
-			<h:commandLink value="Regresar" actionListener="#{usuarioBean.regresar()}" style="margin-right:20px;">
-        	</h:commandLink> 
-		</h:form>
+	
+		 </h:panelGrid>
 		
-     </h:panelGrid>
+	     <p:dataTable id="elemento_table" var="elemento" value="#{elementoBean.elementos}">
+			<p:column headerText="Elementos Existentes-ID">
+				<h:outputText value="#{elemento.id}" />
+			</p:column>
+			<p:column headerText="Tipo">
+				<h:outputText value="#{elemento.tipo}" />
+			</p:column>
+			<p:column headerText="Marca">
+				<h:outputText value="#{elemento.marca}" />
+			</p:column>
+			<p:column headerText="Nombre">
+				<h:outputText value="#{elemento.nombre}" />
+			</p:column>
+		</p:dataTable>
+	 
+		<h:commandLink value="Regresar" actionListener="#{usuarioBean.regresar()}" style="margin-right:20px;">
+	        	</h:commandLink> 
+		  <h:commandLink value="Logout" actionListener="#{usuarioBean.logout()}" style="margin-right:20px;">
+	        </h:commandLink> 
+	        
+	</h:form>
 
 </h:body>
 </html>

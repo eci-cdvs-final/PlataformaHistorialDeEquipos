@@ -7,6 +7,7 @@ public class Equipo implements Serializable{
 	private int id;
 	private String laboratorioId;
 	private boolean activo;
+	private String nombre;
 	private ArrayList<Elemento> elementos;
 	private ArrayList<Novedad> novedades;
 	
@@ -60,5 +61,13 @@ public class Equipo implements Serializable{
 
 	public void setActivo(boolean activo) {
 		this.activo = activo;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 }
