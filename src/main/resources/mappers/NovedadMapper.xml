@@ -8,5 +8,27 @@
 	<insert id="registarNovedad" parameterType="edu.cvds.entities.Novedad">
         insert into Novedad(id, elementoid, equipoid, fecha, titulo,usuarioid,detalle) values (#{id}, #{elementoid}, #{equipoid}, #{fecha},#{titulo}, #{usuarioid}, #{detalle})
     </insert>
+    
+    <select id="buscarNovedades" resultMap="NovedadResult"
+		parameterType="int">
+		SELECT
+			n.equipoid,
+			n.elementoid,
+			n.fecha,
+			n.titulo,
+			n.detalle
+		FROM
+			NOVEDAD as n
+	</select>
+	
+		<resultMap type='Novedad' id='NovedadResult'>
+		<id property='id' column='id' />
+		<result property='elementoId' column='elementoid'/>
+		<result property='equipoId' column='equipoid'/>
+		<result property='usuarioId' column='usuarioid'/>
+		<result property='fecha' column='fecha' />
+		<result property='detalle' column='detalle' />
+		<result property='titulo' column='titulo' />
+	</resultMap>
 	
 	</mapper>

@@ -48,7 +48,7 @@ public class NovedadBean extends BasePageBean {
 		}
 	}
 
-	public List<Equipo> getEquipos() {
+	public List<Equipo> getNovedades() {
 		return laboratorioServices.listarEquipos();
 	}
 

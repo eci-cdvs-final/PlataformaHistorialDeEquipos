@@ -3,6 +3,7 @@ package edu.cvds.services.impl;
 
 import edu.cvds.entities.Elemento;
 import edu.cvds.entities.Equipo;
+import edu.cvds.entities.Novedad;
 import edu.cvds.persistence.ElementoDAO;
 import edu.cvds.persistence.EquipoDAO;
 import edu.cvds.persistence.NovedadDAO;
@@ -67,6 +68,12 @@ public class LaboratorioServicesImpl implements LaboratorioServices {
 	@Override
 	public List<Elemento> listarElementos() {
 		return elementoDAO.listarTodas();
+	}
+
+	@Override
+	public List<Novedad> listarNovedades() {
+
+		return novedadDAO.listarTodas();
 	}
 
 

@@ -6,6 +6,7 @@ import java.util.List;
 import edu.cvds.entities.Usuario;
 import edu.cvds.entities.Elemento;
 import edu.cvds.entities.Equipo;
+import edu.cvds.entities.Novedad;
 
 public interface LaboratorioServices {
 
@@ -24,5 +25,7 @@ public interface LaboratorioServices {
 	public List<Elemento> listarElementos();
 
 	public void registrarEquipo(int id, String nombre);
+
+	public List<Novedad> listarNovedades();
 
 }	

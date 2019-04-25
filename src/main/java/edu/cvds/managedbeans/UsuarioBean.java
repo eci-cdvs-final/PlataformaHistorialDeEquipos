@@ -133,6 +133,15 @@ public class UsuarioBean extends BasePageBean  {
 		}
 	}
 	
+	public void gotoRegistrarNovedad() {
+		try {
+			FacesContext.getCurrentInstance().getExternalContext().redirect("registrarNovedad.xhtml");
+		} catch (Exception e) {
+			FacesContext context = FacesContext.getCurrentInstance();
+	        context.addMessage(null, new FacesMessage("Error", e.getMessage()));
+		}
+	}
+	
 	public void regresar() {
 		try {
 			FacesContext.getCurrentInstance().getExternalContext().redirect("menu.xhtml");
