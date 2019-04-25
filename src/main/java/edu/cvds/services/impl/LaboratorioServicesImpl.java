@@ -4,12 +4,14 @@ package edu.cvds.services.impl;
 import edu.cvds.entities.Equipo;
 import edu.cvds.persistence.ElementoDAO;
 import edu.cvds.persistence.EquipoDAO;
+import edu.cvds.persistence.NovedadDAO;
 
 import edu.cvds.entities.Usuario;
 import edu.cvds.persistence.UsuarioDAO;
 
 import edu.cvds.services.LaboratorioServices;
 
+import java.util.Date;
 import java.util.List;
 
 import com.google.inject.Inject;
@@ -44,5 +46,20 @@ public class LaboratorioServicesImpl implements LaboratorioServices {
 		elementoDAO.registrarElemento(id,tipo,marca);
 		
 	}
+	@Inject
+	private NovedadDAO novedadDAO;
+	
+	@Override
+	public void registrarNovedad(int id, int elementoid, int equipoid, Date fecha, String titulo, String usuarioid,
+			String detalle)
+
+	{
+		
+		novedadDAO.registarNovedad(id, elementoid, equipoid, fecha, titulo, usuarioid, detalle);
+
+		
+	}
+	
+	
 
 }
