@@ -18,13 +18,13 @@ public interface LaboratorioServices {
 
 	
 	
-	public void registrarNovedad(int id,int elementoid,int equipoid, Date fecha,String titulo,String usuarioid,String detalle);
+	public void registrarNovedad(int elementoid,int equipoid,Date fecha,String titulo,String usuarioid,String detalle);
 
-	public void registrarElemento(int id, String tipo, String marca, String nombre);
+	public void registrarElemento(String tipo, String marca, String nombre);
 
 	public List<Elemento> listarElementos();
 
-	public void registrarEquipo(int id, String nombre);
+	public void registrarEquipo(String nombre);
 
 	public List<Novedad> listarNovedades();
 

@@ -15,10 +15,10 @@ public class MyBatisNovedadDAO implements NovedadDAO {
 	private NovedadMapper novedadMapper;
 
 	@Override
-	public void registarNovedad(int id, int elementoid, int equipoid, Date fecha, String titulo, String usuarioid,
+	public void registarNovedad( int elementoid, int equipoid, Date fecha, String titulo, String usuarioid,
 			String detalle) {
 		    java.sql.Date fecha2 = new java.sql.Date(fecha.getTime());
-		novedadMapper.registarNovedad(id, elementoid, equipoid, fecha2, titulo, usuarioid, detalle);
+		novedadMapper.registarNovedad( elementoid, equipoid, fecha2, titulo, usuarioid, detalle);
 		
 	}
 

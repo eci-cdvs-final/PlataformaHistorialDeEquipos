@@ -36,29 +36,29 @@ public class LaboratorioServicesImpl implements LaboratorioServices {
 	}
 
 	@Override
-	public void registrarEquipo(int id,String nombre) {
+	public void registrarEquipo(String nombre) {
 		
-		equipoDAO.registar(id,nombre);
+		equipoDAO.registar(nombre);
 	}
 	
 	@Inject
 	private ElementoDAO elementoDAO;
 
 	@Override
-	public void registrarElemento(int id, String tipo, String marca,String nombre) {
-		elementoDAO.registrarElemento(id,tipo,marca,nombre);
+	public void registrarElemento(String tipo, String marca,String nombre) {
+		elementoDAO.registrarElemento(tipo,marca,nombre);
 		
 	}
 	@Inject
 	private NovedadDAO novedadDAO;
 	
 	@Override
-	public void registrarNovedad(int id, int elementoid, int equipoid, Date fecha, String titulo, String usuarioid,
+	public void registrarNovedad(int elementoid, int equipoid, Date fecha, String titulo, String usuarioid,
 			String detalle)
 
 	{
 		
-		novedadDAO.registarNovedad(id, elementoid, equipoid, fecha, titulo, usuarioid, detalle);
+		novedadDAO.registarNovedad(elementoid, equipoid, fecha, titulo, usuarioid, detalle);
 
 		
 	}

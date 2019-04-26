@@ -19,9 +19,9 @@ public class MyBatisEquipoDAO implements EquipoDAO {
 	}
 
 	@Override
-	public void registar(int id,String nombre) {
+	public void registar(String nombre) {
 		
-		equipoMapper.registrarEquipo(id,nombre);
+		equipoMapper.registrarEquipo(nombre);
 		
 	}
 

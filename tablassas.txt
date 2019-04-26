@@ -15,18 +15,20 @@ create table laboratorio
 
 
 				
-create table equipo(id integer primary key,
+create table equipo(id serial primary key,
 					laboratorioID varchar(10),
 					activo boolean not null,
+					nombre varchar(20) not null,
 					CONSTRAINT FK_EquipoLaborotorio
 					FOREIGN KEY (laboratorioID) REFERENCES laboratorio(id)
 					);
 				
-create table elemento(id INTEGER primary key,
+create table elemento(id serial primary key,
 					tipo varchar(10)not null,
 					equipoID integer,
 					activo boolean not null,
 					marca varchar(50) not null,
+					nombre varchar(20) not null,
 					CONSTRAINT FK_ElementoEquipo
 					FOREIGN KEY (equipoID) REFERENCES equipo(id)
 					);
@@ -40,7 +42,7 @@ create table usuario(username varchar(50) primary key,
 					contrasena varchar(254) not null 
 					);
 
-create table novedad(id integer primary key,	
+create table novedad(id serial primary key,	
 					elementoID integer,
 					equipoID integer,
 					fecha DATE not null,
@@ -65,9 +67,9 @@ check (estado in ('Activo','Inactivo'));
 alter table usuario add constraint ck_rol
 check (rol in ('Profesor','Decano','Monitor','Administrativo'));
 
-insert into usuario values('claudia.santiago','Activo','Profesor','claudia.santiago@escuelaing.edu.co','CLAUDIA PATRICIA SANTIAGO CELY,'60fe74406e7f353ed979f350f2fbb6a2e8690a5fa7d1b0c32983d1d8b3f95f67');
+insert into usuario values('claudia.santiago','Activo','Profesor','claudia.santiago@escuelaing.edu.co','CLAUDIA PATRICIA SANTIAGO CELY','60fe74406e7f353ed979f350f2fbb6a2e8690a5fa7d1b0c32983d1d8b3f95f67');
 
-insert into equipo(id,activo) values(58,True);
+insert into equipo(activo,nombre) values(true,'Equipo 1');
 
 	
 				

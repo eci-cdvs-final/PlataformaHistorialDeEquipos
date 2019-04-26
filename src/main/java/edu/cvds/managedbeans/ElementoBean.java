@@ -66,7 +66,7 @@ public class ElementoBean extends BasePageBean  {
 	public void registrarElemento() {			
 			try {
 				FacesContext context = FacesContext.getCurrentInstance();
-				laboratorioServices.registrarElemento(id, tipo, marca,nombre);
+				laboratorioServices.registrarElemento(tipo, marca,nombre);
 			}
 			catch(Exception e) {
 				FacesContext context = FacesContext.getCurrentInstance();

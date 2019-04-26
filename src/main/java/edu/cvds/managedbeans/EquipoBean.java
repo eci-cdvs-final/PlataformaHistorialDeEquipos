@@ -39,7 +39,7 @@ public class EquipoBean extends BasePageBean {
 	public void registrar() {
 		try {
 			FacesContext context = FacesContext.getCurrentInstance();
-			laboratorioServices.registrarEquipo(id,nombre);
+			laboratorioServices.registrarEquipo(nombre);
 		}
 		catch(Exception e) {
 

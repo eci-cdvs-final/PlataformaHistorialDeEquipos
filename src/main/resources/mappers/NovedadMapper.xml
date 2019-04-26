@@ -6,7 +6,7 @@
 <mapper namespace="edu.cvds.persistence.mybatisimpl.mappers.NovedadMapper">
 
 	<insert id="registarNovedad" parameterType="edu.cvds.entities.Novedad">
-        insert into Novedad(id, elementoid, equipoid, fecha, titulo,usuarioid,detalle) values (#{id}, #{elementoid}, #{equipoid}, #{fecha},#{titulo}, #{usuarioid}, #{detalle})
+        insert into Novedad( elementoid, equipoid, fecha, titulo,usuarioid,detalle) values ( #{elementoid}, #{equipoid}, #{fecha},#{titulo}, #{usuarioid}, #{detalle})
     </insert>
     
     <select id="buscarNovedades" resultMap="NovedadResult"

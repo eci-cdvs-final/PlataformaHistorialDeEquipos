@@ -7,7 +7,7 @@ import edu.cvds.entities.Novedad;
 
 public interface NovedadDAO {
 
-	public void registarNovedad(int id, int elementoid, int equipoid, Date fecha, String titulo, String usuarioid,
+	public void registarNovedad(int elementoid, int equipoid, Date fecha, String titulo, String usuarioid,
 			String detalle);
 
 	public List<Novedad> listarTodas();

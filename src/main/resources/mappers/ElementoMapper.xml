@@ -27,7 +27,7 @@
 	</select>
 
 	<insert id="registrarElemento" parameterType="edu.cvds.entities.Elemento">
-        insert into Elemento(id, tipo, equipoid, activo, marca, nombre) values (#{id}, #{tipo}, NULL, true, #{marca}, #{nombre})
+        insert into Elemento( tipo, equipoid, activo, marca, nombre) values ( #{tipo}, NULL, true, #{marca}, #{nombre})
     </insert>
 	
 	</mapper>

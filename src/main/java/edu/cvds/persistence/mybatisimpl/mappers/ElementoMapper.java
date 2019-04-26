@@ -8,7 +8,7 @@ import edu.cvds.entities.Elemento;
 
 public interface ElementoMapper {
 
-	public void registrarElemento(@Param("id") int id, @Param("tipo")String tipo,@Param("marca") String marca,@Param("nombre") String nombre);
+	public void registrarElemento(@Param("tipo")String tipo,@Param("marca") String marca,@Param("nombre") String nombre);
 
 	public List<Elemento> listar();
 

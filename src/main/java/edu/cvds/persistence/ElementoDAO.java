@@ -6,7 +6,7 @@ import edu.cvds.entities.Elemento;
 
 public interface ElementoDAO {
 
-	void registrarElemento(int id, String tipo, String marca, String nombre);
+	void registrarElemento(String tipo, String marca, String nombre);
 
 	List<Elemento> listarTodas();
 

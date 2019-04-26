@@ -9,7 +9,7 @@ import edu.cvds.entities.Novedad;
 
 public interface NovedadMapper {
 
-	public void registarNovedad(@Param ("id") int id, @Param("elementoid")int elementoid,@Param("equipoid") int equipoid,@Param("fecha") Date fecha, @Param("titulo")String titulo,@Param("usuarioid") String usuarioid,
+	public void registarNovedad( @Param("elementoid")int elementoid,@Param("equipoid") int equipoid,@Param("fecha") Date fecha, @Param("titulo")String titulo,@Param("usuarioid") String usuarioid,
 			@Param("detalle")String detalle);
 
 	public List<Novedad> buscarNovedades();

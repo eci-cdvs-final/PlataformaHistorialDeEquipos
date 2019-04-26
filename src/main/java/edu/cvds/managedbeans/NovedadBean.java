@@ -47,7 +47,7 @@ public class NovedadBean extends BasePageBean {
 			FacesContext context = FacesContext.getCurrentInstance();
 	        context.addMessage("registrarNovedad.xhtml", new FacesMessage("Error", "Es posible que este tratando de ingresar una ID ya registrada"));
 		}
-		laboratorioServices.registrarNovedad(id, elementoId, equipoId, fecha, titulo, usuarioId, detalle);
+		laboratorioServices.registrarNovedad(elementoId, equipoId, fecha, titulo, usuarioId, detalle);
 	}
 
 	public List<Novedad> getNovedades() {
