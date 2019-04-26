@@ -70,15 +70,20 @@
 			<h:outputText value="tituloCorto: " />
 			<h:inputText value="#{novedadBean.titulo}"/>
 			
-        	<p:outputLabel for="popup" value="fecha:" />
-        	<p:datePicker id="fecha" value="#{novedadBean.fecha}" />
+			 <p:outputLabel for="popup" value="Fecha:" />
+       		 <p:calendar id="popup" value="#{novedadBean.fecha}" />
 			
+			<p:outputLabel for="console" value="Usuario:" />
+	        <p:selectOneMenu id="console" value="#{novedadBean.usuarioId}" style="width:125px">
+	            <f:selectItem itemLabel="#{usuarioBean.getUsuario().getUserName()}" itemValue="#{usuarioBean.getUsuario().getUserName()}" />
+	        </p:selectOneMenu>
 			
 			<h:outputText value="Detalle: " />
 			<h:inputText value="#{novedadBean.detalle}"/>
-		
+			
+			
 	
-			<h:commandLink value="Registrar Novedad" actionListener="#{novedadBean.registrarNovedad()}" style="margin-right:20px; ">
+			<h:commandLink value="Registrar Novedad" actionListener="#{novedadBean.registrar()}" style="margin-right:20px; ">
 			</h:commandLink>
 	
 		 </h:panelGrid>

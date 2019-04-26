@@ -13,13 +13,14 @@ import javax.inject.Inject;
 import com.google.inject.Injector;
 
 import edu.cvds.entities.Equipo;
+import edu.cvds.entities.Novedad;
 import edu.cvds.services.LaboratorioServices;
 
 /**
  * Bean para la interfaz de usuario de las novedades
  */
 
-@ManagedBean(name = "NovedadBean")
+@ManagedBean(name = "novedadBean")
 @SessionScoped
 public class NovedadBean extends BasePageBean {
 	
@@ -39,17 +40,18 @@ public class NovedadBean extends BasePageBean {
 	public void registrar() {
 		try {
 			FacesContext context = FacesContext.getCurrentInstance();
-			laboratorioServices.registrarNovedad(id, elementoId, equipoId, fecha, titulo, usuarioId, detalle);
+			
 		}
 		catch(Exception e) {
-
+			
 			FacesContext context = FacesContext.getCurrentInstance();
 	        context.addMessage("registrarNovedad.xhtml", new FacesMessage("Error", "Es posible que este tratando de ingresar una ID ya registrada"));
 		}
+		laboratorioServices.registrarNovedad(id, elementoId, equipoId, fecha, titulo, usuarioId, detalle);
 	}
 
-	public List<Equipo> getNovedades() {
-		return laboratorioServices.listarEquipos();
+	public List<Novedad> getNovedades() {
+		return laboratorioServices.listarNovedades();
 	}
 
 
