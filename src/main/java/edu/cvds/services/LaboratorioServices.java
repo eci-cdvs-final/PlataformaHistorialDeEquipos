@@ -28,4 +28,6 @@ public interface LaboratorioServices {
 
 	public List<Novedad> listarNovedades();
 
+	public void asociarElemento(int idElem, int idEqui);
+
 }	

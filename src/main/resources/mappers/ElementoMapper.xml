@@ -20,8 +20,7 @@
 		SELECT
 			e.id,
 			e.tipo,
-			e.marca,
-			e.nombre
+			e.marca
 		FROM
 			ELEMENTO as e
 	</select>
@@ -29,5 +28,14 @@
 	<insert id="registrarElemento" parameterType="edu.cvds.entities.Elemento">
         insert into Elemento( tipo, equipoid, activo, marca, nombre) values ( #{tipo}, NULL, true, #{marca}, #{nombre})
     </insert>
+    
+    <update id="desasociarElemento" parameterType="map">
+		UPDATE elemento set equipoid=NULL where equipoid=#{idEqui} and tipo=(select tipo from elemento where id=#{idElem})
+	</update>
+	
+	<update id="asociarElemento" parameterType="map">
+		UPDATE elemento set equipoid=#{idEqui} where id=#{idElem}
+	</update>
+	
 	
 	</mapper>

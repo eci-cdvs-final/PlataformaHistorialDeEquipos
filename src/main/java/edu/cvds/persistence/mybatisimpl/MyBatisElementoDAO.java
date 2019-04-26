@@ -22,4 +22,11 @@ public class MyBatisElementoDAO implements ElementoDAO {
 	public List<Elemento> listarTodas() {
 		return elementoMapper.listar();
 	}
+
+	@Override
+	public void asociarElemento(int idElem, int idEqui) {
+		elementoMapper.desasociarElemento(idElem,idEqui);
+		elementoMapper.asociarElemento(idElem,idEqui);
+	}
+
 }

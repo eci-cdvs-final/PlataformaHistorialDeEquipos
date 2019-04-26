@@ -76,6 +76,11 @@ public class LaboratorioServicesImpl implements LaboratorioServices {
 		return novedadDAO.listarTodas();
 	}
 
+	@Override
+	public void asociarElemento(int idElem, int idEqui) {
+		elementoDAO.asociarElemento(idElem,idEqui);
+	}
+
 
 
 }

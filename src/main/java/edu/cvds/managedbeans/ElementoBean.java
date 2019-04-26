@@ -29,6 +29,8 @@ public class ElementoBean extends BasePageBean  {
 	private String marca;
 	private String tipo;
 	private String nombre;
+	private int idElem;
+	private int idEqui;
 	
 	/*public ElementoBean() {
 		injector = super.getInjector();
@@ -73,6 +75,17 @@ public class ElementoBean extends BasePageBean  {
 		        context.addMessage(null, new FacesMessage("Error", "Es posible que este tratando de ingresar una ID ya registrada"));
 			}
 	}
+	
+	public void asociarElemento() {			
+		try {
+			FacesContext context = FacesContext.getCurrentInstance();
+			laboratorioServices.asociarElemento(idElem, idEqui);
+		}
+		catch(Exception e) {
+			FacesContext context = FacesContext.getCurrentInstance();
+	        context.addMessage(null, new FacesMessage("Error", "Es posible que este tratando de ingresar una ID ya registrada"));
+		}
+	}
 
 	public String getNombre() {
 		return nombre;
@@ -80,5 +93,21 @@ public class ElementoBean extends BasePageBean  {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	public int getIdElem() {
+		return idElem;
+	}
+
+	public void setIdElem(int idElem) {
+		this.idElem = idElem;
+	}
+
+	public int getIdEqui() {
+		return idEqui;
+	}
+
+	public void setIdEqui(int idEqui) {
+		this.idEqui = idEqui;
 	}
 }

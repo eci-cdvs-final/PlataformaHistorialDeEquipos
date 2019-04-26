@@ -19,8 +19,7 @@
 	<select id="buscarEquipos" resultMap="EquipoResult"
 		parameterType="int">
 		SELECT
-			e.id,
-			e.nombre
+			e.id
 		FROM
 			EQUIPO as e
 	</select>

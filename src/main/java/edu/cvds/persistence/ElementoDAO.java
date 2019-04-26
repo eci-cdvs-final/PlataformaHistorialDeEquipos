@@ -10,4 +10,6 @@ public interface ElementoDAO {
 
 	List<Elemento> listarTodas();
 
+	void asociarElemento(int idElem, int idEqui);
+
 }

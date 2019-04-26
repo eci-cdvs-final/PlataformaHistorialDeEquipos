@@ -12,4 +12,8 @@ public interface ElementoMapper {
 
 	public List<Elemento> listar();
 
+	public void asociarElemento(@Param("idElem")int idElem, @Param("idEqui")int idEqui);
+
+	public void desasociarElemento(@Param("idElem")int idElem, @Param("idEqui")int idEqui);
+
 }
