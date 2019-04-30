@@ -81,6 +81,11 @@ public class LaboratorioServicesImpl implements LaboratorioServices {
 		elementoDAO.asociarElemento(idElem,idEqui);
 	}
 
+	@Override
+	public List<Equipo> equiposActivos() {
+		return equipoDAO.equiposActivos();
+	}
+
 
 
 }

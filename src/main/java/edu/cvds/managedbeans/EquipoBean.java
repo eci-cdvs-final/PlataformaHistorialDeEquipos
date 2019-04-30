@@ -70,7 +70,9 @@ public class EquipoBean extends BasePageBean {
 		this.nombre = nombre;
 	}
 
-
+	public List<Equipo> equiposActivos() {
+		return laboratorioServices.equiposActivos();
+	}
 
 	
 	

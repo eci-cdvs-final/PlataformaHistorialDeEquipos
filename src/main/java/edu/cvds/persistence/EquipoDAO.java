@@ -10,4 +10,6 @@ public interface EquipoDAO {
 	
 	public void registar(String nombre);
 
+	public List<Equipo> equiposActivos();
+
 }

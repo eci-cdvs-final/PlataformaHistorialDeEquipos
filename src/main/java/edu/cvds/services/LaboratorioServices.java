@@ -30,4 +30,6 @@ public interface LaboratorioServices {
 
 	public void asociarElemento(int idElem, int idEqui);
 
+	public List<Equipo> equiposActivos();
+
 }	

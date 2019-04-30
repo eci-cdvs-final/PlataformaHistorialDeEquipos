@@ -29,5 +29,14 @@
 	 <insert id="registrarEquipo" parameterType="edu.cvds.entities.Equipo">
         insert into equipo(activo,nombre) values (True,#{nombre})
     </insert>
+    
+    <select id="equiposActivos" resultMap="EquipoResult"
+		parameterType="int">
+		SELECT
+			*
+		FROM
+			EQUIPO as e 
+			where e.activo=true
+	</select>
 	
 	</mapper>

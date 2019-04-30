@@ -13,30 +13,27 @@
 	                                                   
 </h:head>
 <h:body>
-	<h1>Registrar Equipo</h1>
+	<h1>Reporte de Equipos</h1>
 	<h:form>
-	 <h:panelGrid columns="2" cellpadding="10">
-           
-			 <h:outputText value="Nombre: " />
-			<h:inputText value="#{equipoBean.nombre}"/>
-		   
-		      <h:commandLink value="Registrar" actionListener="#{equipoBean.registrar()}" style="margin-right:20px;">
-   	 		</h:commandLink>   
-			
-		        
-        </h:panelGrid>
 	
-	<p:dataTable id="equi_table" var="equipo" value="#{equipoBean.equipos}" rows="10"
-                 paginator="true">
-		<p:column headerText="Equipos Disponibles">
+	<p:dataTable id="equi_table" var="equipo" value="#{equipoBean.equiposActivos()}" rows="10" paginator="true">
+		<p:column var="equi" filterBy="#{equipo.id}" headerText="Equipos Disponibles">
 			<h:outputText value="#{equipo.id}" />
 		</p:column>
-		<p:column headerText="Nombre">
+		<p:column filterBy="#{equipo.laboratorioId}" headerText="Laboratorio al que pertenece">
+			<h:outputText value="#{equipo.laboratorioId}" />
+		</p:column>
+		<p:column filterBy="#{equipo.nombre}" headerText="Nombre"  filterMatchMode="contains">
 			<h:outputText value="#{equipo.nombre}" />
 		</p:column>
-	</p:dataTable>
-	
-        <h:commandLink value="Regresar" actionListener="#{usuarioBean.regresar()}" style="margin-right:20px;">
+		<p:column  headerText="Reporte de Novedades">
+			<p:button outcome="novedades" value="Ver Novedad" >
+					<f:param name="Novedad" value="${equipo.id}" />
+			</p:button>
+		</p:column>
+	</p:dataTable>	
+	 
+	 <h:commandLink value="Regresar" actionListener="#{usuarioBean.regresar()}" style="margin-right:20px;">
         </h:commandLink>
         <h:commandLink value="Logout" actionListener="#{usuarioBean.logout()}" style="margin-right:20px;">
         </h:commandLink> 

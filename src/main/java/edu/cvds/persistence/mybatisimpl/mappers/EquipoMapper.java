@@ -12,4 +12,7 @@ public interface EquipoMapper {
 	
 	
 	public void registrarEquipo(@Param("nombre") String nombre);
+
+
+	public List<Equipo> equiposActivos();
 }
