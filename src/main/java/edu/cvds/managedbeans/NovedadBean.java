@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
@@ -26,7 +27,6 @@ public class NovedadBean extends BasePageBean {
 	
 	@Inject
 	private LaboratorioServices laboratorioServices;
-	
 	
 	/*private Injector injector;*/
 	private int id;
@@ -53,7 +53,11 @@ public class NovedadBean extends BasePageBean {
 	public List<Novedad> getNovedades() {
 		return laboratorioServices.listarNovedades();
 	}
-
+	
+	public List<Novedad> getNovedades2(int a) {
+		FacesContext context = FacesContext.getCurrentInstance();
+		return laboratorioServices.listarNovedades(equipoId);
+	}
 
 	public int getId() {
 		return id;
@@ -111,11 +115,5 @@ public class NovedadBean extends BasePageBean {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-
-
-
-	
-	
-	
 	
 }

@@ -32,4 +32,6 @@ public interface LaboratorioServices {
 
 	public List<Equipo> equiposActivos();
 
+	public List<Novedad> listarNovedades(int equipoId);
+
 }	

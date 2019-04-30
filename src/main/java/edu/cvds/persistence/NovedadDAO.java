@@ -12,4 +12,6 @@ public interface NovedadDAO {
 
 	public List<Novedad> listarTodas();
 
+	public List<Novedad> listarTodas(int equipoId);
+
 }

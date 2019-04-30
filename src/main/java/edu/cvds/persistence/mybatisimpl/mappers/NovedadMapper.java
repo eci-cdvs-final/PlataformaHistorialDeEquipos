@@ -14,4 +14,6 @@ public interface NovedadMapper {
 
 	public List<Novedad> buscarNovedades();
 
+	public List<Novedad> buscarNovedades2(@Param("equipoid") int equipoId);
+
 }

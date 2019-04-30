@@ -13,31 +13,10 @@
 	                                                   
 </h:head>
 <h:body>
-	<h1>Novedades</h1>
+	<h1>Equipos</h1>
 	<h:form>
 	
-		<p:dataTable id="novedad_table" var="novedad" value="#{novedadBean.getNovedades2(equipo.id)}" rows="10"
-                 paginator="true">
-			<p:column headerText="EquipoID">
-				<h:outputText value="#{novedad.equipoId}" />
-			</p:column>
-			
-			<p:column headerText="ElementoId">
-				<h:outputText value="#{novedad.elementoId}" />
-			</p:column>
-			
-			<p:column headerText="tituloCorto">
-				<h:outputText value="#{novedad.titulo}" />
-			</p:column>
-			
-			<p:column headerText="fecha">
-				<h:outputText value="#{novedad.fecha}" />
-			</p:column>
-			
-			<p:column headerText="detalle">
-				<h:outputText value="#{novedad.detalle}" />
-			</p:column>
-		</p:dataTable>
+		
 	 
 	 <h:commandLink value="Regresar" actionListener="#{usuarioBean.regresar()}" style="margin-right:20px;">
         </h:commandLink>

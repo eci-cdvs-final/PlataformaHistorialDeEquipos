@@ -86,6 +86,11 @@ public class LaboratorioServicesImpl implements LaboratorioServices {
 		return equipoDAO.equiposActivos();
 	}
 
+	@Override
+	public List<Novedad> listarNovedades(int equipoId) {
+		return novedadDAO.listarTodas(equipoId);
+	}
+
 
 
 }
