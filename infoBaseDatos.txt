@@ -1,0 +1,14 @@
+Host
+ec2-23-23-195-205.compute-1.amazonaws.com
+Database
+d3com3to3onqr2
+User
+mbuyphdtdlfboz
+Port
+5432
+Password
+ba8b4715e12982daa4fe8475bd4141a0faba876b5524761ee32c5084c27935a3
+URI
+postgres://mbuyphdtdlfboz:ba8b4715e12982daa4fe8475bd4141a0faba876b5524761ee32c5084c27935a3@ec2-23-23-195-205.compute-1.amazonaws.com:5432/d3com3to3onqr2
+Heroku CLI
+heroku pg:psql postgresql-corrugated-20039 --app proyecto-test-cvds

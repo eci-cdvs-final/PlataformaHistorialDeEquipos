@@ -20,7 +20,9 @@
 		SELECT
 			e.id,
 			e.tipo,
-			e.marca
+			e.equipoid,
+			e.marca,
+			e.nombre
 		FROM
 			ELEMENTO as e
 	</select>

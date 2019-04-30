@@ -26,7 +26,8 @@
 		        
         </h:panelGrid>
 	
-	<p:dataTable id="equi_table" var="equipo" value="#{equipoBean.equipos}">
+	<p:dataTable id="equi_table" var="equipo" value="#{equipoBean.equipos}" rows="10"
+                 paginator="true">
 		<p:column headerText="Equipos Disponibles">
 			<h:outputText value="#{equipo.id}" />
 		</p:column>

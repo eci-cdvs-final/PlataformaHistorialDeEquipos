@@ -39,12 +39,16 @@
 	
 		 </h:panelGrid>
 		
-	     <p:dataTable id="elemento_table" var="elemento" value="#{elementoBean.elementos}">
+	     <p:dataTable id="elemento_table" var="elemento" value="#{elementoBean.elementos}" rows="10"
+                 paginator="true">
 			<p:column headerText="Elementos Existentes-ID">
 				<h:outputText value="#{elemento.id}" />
 			</p:column>
 			<p:column headerText="Tipo">
 				<h:outputText value="#{elemento.tipo}" />
+			</p:column>
+			<p:column headerText="Equipo al que pertenece">
+				<h:outputText value="#{elemento.equipo}" />
 			</p:column>
 			<p:column headerText="Marca">
 				<h:outputText value="#{elemento.marca}" />

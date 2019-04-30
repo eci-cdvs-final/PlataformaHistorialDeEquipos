@@ -88,7 +88,8 @@
 	
 		 </h:panelGrid>
 		
-	     <p:dataTable id="novedad_table" var="novedad" value="#{novedadBean.novedades}">
+	     <p:dataTable id="novedad_table" var="novedad" value="#{novedadBean.novedades}" rows="10"
+                 paginator="true">
 			<p:column headerText="EquipoID">
 				<h:outputText value="#{novedad.equipoId}" />
 			</p:column>
