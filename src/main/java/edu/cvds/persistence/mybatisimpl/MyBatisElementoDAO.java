@@ -29,4 +29,14 @@ public class MyBatisElementoDAO implements ElementoDAO {
 		elementoMapper.asociarElemento(idElem,idEqui);
 	}
 
+	@Override
+	public List<Elemento> listarTodas(int idEqui) {
+		return elementoMapper.listar2(idEqui);
+	}
+
+	@Override
+	public List<Elemento> listarElementosLibres() {
+		return elementoMapper.listarElementosLibres();
+	}
+
 }

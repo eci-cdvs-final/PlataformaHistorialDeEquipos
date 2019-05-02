@@ -91,6 +91,16 @@ public class LaboratorioServicesImpl implements LaboratorioServices {
 		return novedadDAO.listarTodas(equipoId);
 	}
 
+	@Override
+	public List<Elemento> listarElementos(int idEqui) {
+		return elementoDAO.listarTodas(idEqui);
+	}
+
+	@Override
+	public List<Elemento> listarElementosLibres() {
+		return elementoDAO.listarElementosLibres();
+	}
+
 
 
 }

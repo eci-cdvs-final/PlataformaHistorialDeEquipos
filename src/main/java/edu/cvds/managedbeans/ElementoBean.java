@@ -12,6 +12,7 @@ import com.google.inject.Injector;
 
 import edu.cvds.entities.Elemento;
 import edu.cvds.entities.Equipo;
+import edu.cvds.entities.Novedad;
 import edu.cvds.services.LaboratorioServices;
 
 /**
@@ -63,6 +64,15 @@ public class ElementoBean extends BasePageBean  {
 	
 	public List<Elemento> getElementos() {
 		return laboratorioServices.listarElementos();
+	}
+	
+	public List<Elemento> elementosLibres() {
+		return laboratorioServices.listarElementosLibres();
+	}
+	
+	public List<Elemento> getElementos2() {
+		FacesContext context = FacesContext.getCurrentInstance();
+		return laboratorioServices.listarElementos(idEqui);
 	}
 	
 	public void registrarElemento() {			

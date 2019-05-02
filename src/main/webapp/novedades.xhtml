@@ -14,13 +14,13 @@
 </h:head>
 
 <f:metadata>
-  <f:viewParam name="equipoid" value="#{novedadBean.equipoId}"/>
+	<f:viewParam name="equipoid" value="#{novedadBean.equipoId}"/>
 </f:metadata>
 
 <h:body>
 	<h1>Novedades del equipo #{novedadBean.equipoId}</h1>
-	<h:form>
 	
+	<h:form>
 		<p:dataTable id="novedad_table" var="novedad" value="#{novedadBean.getNovedades2()}" rows="10"
                  paginator="true">
 			<p:column headerText="EquipoID">
@@ -44,10 +44,10 @@
 			</p:column>
 		</p:dataTable>
 	 
-	 <h:commandLink value="Regresar" actionListener="#{equipoBean.regresarReporteEquipos()}" style="margin-right:20px;">
-        </h:commandLink>
-        <h:commandLink value="Logout" actionListener="#{usuarioBean.logout()}" style="margin-right:20px;">
-        </h:commandLink> 
+		 <h:commandLink value="Regresar" actionListener="#{equipoBean.regresarReporteEquipos()}" style="margin-right:20px;">
+	        </h:commandLink>
+	     <h:commandLink value="Logout" actionListener="#{usuarioBean.logout()}" style="margin-right:20px;">
+	        </h:commandLink> 
 	</h:form>
 	
 	

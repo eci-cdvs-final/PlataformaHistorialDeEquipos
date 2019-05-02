@@ -14,10 +14,6 @@ public interface LaboratorioServices {
 	
 	public Usuario getUsuario(String username);
 	
-
-
-	
-	
 	public void registrarNovedad(int elementoid,int equipoid,Date fecha,String titulo,String usuarioid,String detalle);
 
 	public void registrarElemento(String tipo, String marca, String nombre);
@@ -33,5 +29,9 @@ public interface LaboratorioServices {
 	public List<Equipo> equiposActivos();
 
 	public List<Novedad> listarNovedades(int equipoId);
+
+	public List<Elemento> listarElementos(int idEqui);
+
+	public List<Elemento> listarElementosLibres();
 
 }	

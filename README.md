@@ -24,7 +24,11 @@
 * Diagrama de clases (hacerlo mediante ingeniería inversa)
 * Descripción de la arquitectura (capas) y del Stack de tecnologías utilizado (PrimeFaces, Guice, QuickTheories, PostgreSQL).
 * https://plataformashisorialequipo.herokuapp.com/faces/login.xhtml
-* Enlace al sistema de integración continua.
+
+Usuario: claudia.santiago
+
+Contraseña: Admin1234
+
 ### Descripción del proceso:
 * Breve descripción de la Metodología.
 
@@ -69,23 +73,23 @@
 
 ![](https://github.com/eci-cdvs-final/PlataformaHistorialDeEquipos/blob/master/img/Sprint2_backlog.png)
 
-* Imagen del 'sprint-burndown chart' (sacado del sprint-backlog anterior), y una descripción breve de los problemas encontrados y mejoras realizadas al proceso.
+* Imagen del 'sprint-burndown chart'
 
 ![](https://github.com/eci-cdvs-final/PlataformaHistorialDeEquipos/blob/master/img/Sprint2_burndown.png)
 
 * Se hizo bien
 
-	Se logró corregir oportunamente las actividades que quedaron pendientes del Sprint 1
-	Se logró un buen y completo funcionamiento de tres historias de usuario propuestas para este Sprint
+	Se logró corregir oportunamente las actividades que quedaron pendientes del Sprint 1.
+	Se logró un buen y completo funcionamiento de tres historias de usuario propuestas para este Sprint.
 
 * Problemas
 
-	Hicieron falta algunas pruebas de las historias de usuario
+	Hicieron falta algunas pruebas de las historias de usuario.
 	No se tuvo en cuenta algunos requisitos de "Registrar Equipo" y "Reporte de Equipos"
 
 * Nos comprometememos
 
-   A terminar las pruebas que quedaron pendientes en el Sprint 2
+   A terminar las pruebas que quedaron pendientes en el Sprint 2.
    Lograr un buen funcionamiento y planeación de las historias de usuario, quedando así completos todos los objetivos propuestos en el backlog del sprint 3 
 
 #### Sprint 3:
