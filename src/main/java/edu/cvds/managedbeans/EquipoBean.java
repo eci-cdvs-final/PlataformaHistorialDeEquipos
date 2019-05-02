@@ -9,6 +9,8 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
+import org.apache.shiro.SecurityUtils;
+
 import com.google.inject.Injector;
 
 import edu.cvds.entities.Equipo;
@@ -74,8 +76,13 @@ public class EquipoBean extends BasePageBean {
 		return laboratorioServices.equiposActivos();
 	}
 
-	
-	
-	
+	public void regresarReporteEquipos() {
+		try {
+			FacesContext.getCurrentInstance().getExternalContext().redirect("reporteEquipos.xhtml");
+		} catch (Exception e) {
+			FacesContext context = FacesContext.getCurrentInstance();
+	        context.addMessage(null, new FacesMessage("Error", e.getMessage()));
+		}
+	}
 	
 }

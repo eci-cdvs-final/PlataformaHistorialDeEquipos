@@ -167,7 +167,5 @@ public class UsuarioBean extends BasePageBean  {
 			FacesContext context = FacesContext.getCurrentInstance();
 	        context.addMessage(null, new FacesMessage("Error", e.getMessage()));
 		}
-
-		
 	}
 }
