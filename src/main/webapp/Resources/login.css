@@ -3,3 +3,10 @@
 body {
   background-color: lightblue;
 }
+
+h1 {
+	 border-style: solid;
+     border-color: #331669;
+     background-color:DodgerBlue;
+     font-size:3vw; color:Navy;
+}
