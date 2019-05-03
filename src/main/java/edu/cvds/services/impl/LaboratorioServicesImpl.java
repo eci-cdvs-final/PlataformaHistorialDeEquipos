@@ -51,16 +51,7 @@ public class LaboratorioServicesImpl implements LaboratorioServices {
 	@Inject
 	private NovedadDAO novedadDAO;
 	
-	@Override
-	public void registrarNovedad(int elementoid, int equipoid, Date fecha, String titulo, String usuarioid,
-			String detalle)
-
-	{
-		
-		novedadDAO.registarNovedad(elementoid, equipoid, fecha, titulo, usuarioid, detalle);
-
-		
-	}
+	
 	
 	
 
@@ -98,6 +89,31 @@ public class LaboratorioServicesImpl implements LaboratorioServices {
 	@Override
 	public List<Elemento> listarElementosLibres() {
 		return elementoDAO.listarElementosLibres();
+	}
+
+	@Override
+	public int mayorEquipo() {
+		return equipoDAO.mayor();
+	}
+	
+
+	@Override
+	public void registrarNovedadEquipo(int equipoid, Date fecha, String titulo, String usuarioid, String detalle) {
+		novedadDAO.registarNovedadEquipo(equipoid, fecha, titulo, usuarioid, detalle);
+		
+	}
+
+	@Override
+	public void registrarNovedadElemento(int elementoid, int equipoid, Date fecha, String titulo, String usuarioid,
+			String detalle) {
+		novedadDAO.registarNovedadElemento(elementoid, equipoid, fecha, titulo, usuarioid, detalle);
+		
+	}
+
+	@Override
+	public int getEquipoID(int elementoId) {
+		return elementoDAO.getEquipoID(elementoId);
+		
 	}
 
 }

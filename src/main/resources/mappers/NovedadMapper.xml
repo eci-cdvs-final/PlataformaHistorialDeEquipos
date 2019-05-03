@@ -5,7 +5,11 @@
 
 <mapper namespace="edu.cvds.persistence.mybatisimpl.mappers.NovedadMapper">
 
-	<insert id="registarNovedad" parameterType="edu.cvds.entities.Novedad">
+	<insert id="registarNovedadEquipo" parameterType="edu.cvds.entities.Novedad">
+        insert into Novedad( elementoid, equipoid, fecha, titulo,usuarioid,detalle) values (null, #{equipoid}, #{fecha},#{titulo}, #{usuarioid}, #{detalle})
+    </insert>
+    
+    <insert id="registarNovedadElemento" parameterType="edu.cvds.entities.Novedad">
         insert into Novedad( elementoid, equipoid, fecha, titulo,usuarioid,detalle) values ( #{elementoid}, #{equipoid}, #{fecha},#{titulo}, #{usuarioid}, #{detalle})
     </insert>
     

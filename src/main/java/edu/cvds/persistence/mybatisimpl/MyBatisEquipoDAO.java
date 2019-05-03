@@ -28,4 +28,9 @@ public class MyBatisEquipoDAO implements EquipoDAO {
 		return equipoMapper.equiposActivos();
 	}
 
+	@Override
+	public int mayor() {
+		return equipoMapper.mayor().getId();
+	}
+
 }

@@ -61,13 +61,17 @@
 	<h1>Registrar Novedad </h1>
 	<h:form> 
 		<h:panelGrid columns="2" cellpadding="10">
-			<h:outputText value="EquipoId: " />
-			<h:inputText value="#{novedadBean.equipoId}"/>
-			
-			<h:outputText value="ElementoId: " />
+		
+			<p:outputLabel value="Tipo:" />
+			<p:selectOneMenu id="console2" value="#{novedadBean.tipo}" style="width:125px">
+	            <f:selectItem itemLabel="Equipo" itemValue="Equipo" />
+	            <f:selectItem itemLabel="Elemento" itemValue="Elemento" />
+        	</p:selectOneMenu>
+		
+			<p:outputLabel value="Id: " />
 			<h:inputText value="#{novedadBean.elementoId}"/>
 			
-			<h:outputText value="tituloCorto: " />
+			<p:outputLabel value="TituloCorto: " />
 			<h:inputText value="#{novedadBean.titulo}"/>
 			
 			 <p:outputLabel for="popup" value="Fecha:" />
@@ -78,8 +82,8 @@
 	            <f:selectItem itemLabel="#{usuarioBean.getUsuario().getUserName()}" itemValue="#{usuarioBean.getUsuario().getUserName()}" />
 	        </p:selectOneMenu>
 			
-			<h:outputText value="Detalle: " />
-			<h:inputText value="#{novedadBean.detalle}"/>
+			<p:outputLabel value="Detalle: " />
+			<p:inputTextarea rows="5" cols="30"  maxlength="500" counterTemplate="{0} caracteres restantes." autoResize="false" value="#{novedadBean.detalle}"/>
 			
 			
 	

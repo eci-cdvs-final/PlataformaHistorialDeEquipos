@@ -25,6 +25,14 @@
 			EQUIPO as e
 	</select>
 	
+	<select id="mayor" resultMap="EquipoResult"
+		parameterType="int">
+		select e.id 
+		from EQUIPO as e 
+		where e.id=(select max(e.id) from EQUIPO as e)
+			
+	</select>
+	
 	
 	 <insert id="registrarEquipo" parameterType="edu.cvds.entities.Equipo">
         insert into equipo(activo,nombre,laboratorioId) values (True,#{nombre},Null)

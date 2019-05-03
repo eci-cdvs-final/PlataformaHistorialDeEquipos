@@ -17,4 +17,6 @@ public interface ElementoDAO {
 
 	List<Elemento> listarElementosLibres();
 
+	int getEquipoID(int elementoId);
+
 }

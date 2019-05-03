@@ -14,13 +14,7 @@ public class MyBatisNovedadDAO implements NovedadDAO {
 	@Inject
 	private NovedadMapper novedadMapper;
 
-	@Override
-	public void registarNovedad( int elementoid, int equipoid, Date fecha, String titulo, String usuarioid,
-			String detalle) {
-		    java.sql.Date fecha2 = new java.sql.Date(fecha.getTime());
-		novedadMapper.registarNovedad( elementoid, equipoid, fecha2, titulo, usuarioid, detalle);
-		
-	}
+
 
 	@Override
 	public List<Novedad> listarTodas() {
@@ -30,6 +24,21 @@ public class MyBatisNovedadDAO implements NovedadDAO {
 	@Override
 	public List<Novedad> listarTodas(int equipoId) {
 		return novedadMapper.buscarNovedades2(equipoId);
+	}
+
+	@Override
+	public void registarNovedadEquipo(int equipoid, Date fecha, String titulo, String usuarioid, String detalle) {
+		 java.sql.Date fecha2 = new java.sql.Date(fecha.getTime());
+			novedadMapper.registarNovedadEquipo(equipoid, fecha2, titulo, usuarioid, detalle);
+		
+	}
+
+	@Override
+	public void registarNovedadElemento(int elementoid, int equipoid, Date fecha, String titulo, String usuarioid,
+			String detalle) {
+		 java.sql.Date fecha2 = new java.sql.Date(fecha.getTime());
+			novedadMapper.registarNovedadElemento( elementoid, equipoid, fecha2, titulo, usuarioid, detalle);
+		
 	}
 
 }

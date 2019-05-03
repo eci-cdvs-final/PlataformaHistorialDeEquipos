@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 import edu.cvds.entities.Elemento;
+import edu.cvds.entities.Equipo;
 
 public interface ElementoMapper {
 
@@ -23,5 +24,7 @@ public interface ElementoMapper {
 	public List<Elemento> listarElementosLibres();
 
 	public void desasociarElemento2(@Param("idEqui")int idEqui, @Param("tipo")String tipo);
+
+	public Elemento getEquipoID(@Param("elementoId") int elementoId);
 
 }

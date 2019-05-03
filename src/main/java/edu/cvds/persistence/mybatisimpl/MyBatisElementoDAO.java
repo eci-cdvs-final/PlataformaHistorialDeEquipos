@@ -45,4 +45,10 @@ public class MyBatisElementoDAO implements ElementoDAO {
 		return elementoMapper.listarElementosLibres();
 	}
 
+	@Override
+	public int getEquipoID(int elementoId) {
+		return Integer.parseInt(elementoMapper.getEquipoID(elementoId).getEquipo());
+		
+	}
+
 }

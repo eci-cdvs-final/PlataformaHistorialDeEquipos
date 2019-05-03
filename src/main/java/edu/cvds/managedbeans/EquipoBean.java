@@ -33,6 +33,10 @@ public class EquipoBean extends BasePageBean {
 	private String nombre;
 	private String laboratorioId;
 	private boolean activo;
+	private int pantallaID;
+	private int mouseID;
+	private int torreID;
+	private int tecladoID;
 
 	/*public EquipoBean() {
 		injector = super.getInjector();
@@ -43,12 +47,19 @@ public class EquipoBean extends BasePageBean {
 		try {
 			FacesContext context = FacesContext.getCurrentInstance();
 			laboratorioServices.registrarEquipo(nombre,laboratorioId);
+			int ma=laboratorioServices.mayorEquipo();
+			laboratorioServices.asociarElemento(mouseID, ma);
+			laboratorioServices.asociarElemento(pantallaID, ma);
+			laboratorioServices.asociarElemento(torreID, ma);
+			laboratorioServices.asociarElemento(tecladoID, ma);
 		}
 		catch(Exception e) {
 
 			FacesContext context = FacesContext.getCurrentInstance();
-	        context.addMessage("registrarEquipo.xhtml", new FacesMessage("Error", "Es posible que este tratando de ingresar una ID ya registrada"));
+	        context.addMessage("registrarEquipo.xhtml", new FacesMessage("Error", "No fue posible el registro"));
 		}
+		
+		
 	}
 
 	public List<Equipo> getEquipos() {
@@ -100,6 +111,38 @@ public class EquipoBean extends BasePageBean {
 
 	public void setActivo(boolean activo) {
 		this.activo = activo;
+	}
+
+	public int getPantallaID() {
+		return pantallaID;
+	}
+
+	public void setPantallaID(int pantallaID) {
+		this.pantallaID = pantallaID;
+	}
+
+	public int getMouseID() {
+		return mouseID;
+	}
+
+	public void setMouseID(int mouseID) {
+		this.mouseID = mouseID;
+	}
+
+	public int getTorreID() {
+		return torreID;
+	}
+
+	public void setTorreID(int torreID) {
+		this.torreID = torreID;
+	}
+
+	public int getTecladoID() {
+		return tecladoID;
+	}
+
+	public void setTecladoID(int tecladoID) {
+		this.tecladoID = tecladoID;
 	}
 	
 }

@@ -36,6 +36,7 @@ public class NovedadBean extends BasePageBean {
 	private Date fecha;
 	private String detalle;
 	private String titulo;
+	private String tipo;
 	
 	public void registrar() {
 		try {
@@ -47,7 +48,15 @@ public class NovedadBean extends BasePageBean {
 			FacesContext context = FacesContext.getCurrentInstance();
 	        context.addMessage("registrarNovedad.xhtml", new FacesMessage("Error", "Es posible que este tratando de ingresar una ID ya registrada"));
 		}
-		laboratorioServices.registrarNovedad(elementoId, equipoId, fecha, titulo, usuarioId, detalle);
+		
+		if (tipo.equals("Equipo")) {
+			laboratorioServices.registrarNovedadEquipo(elementoId, fecha, titulo, usuarioId, detalle);
+		}
+		else{
+			equipoId=laboratorioServices.getEquipoID(elementoId);
+			laboratorioServices.registrarNovedadElemento(elementoId, equipoId, fecha, titulo, usuarioId, detalle);
+		}
+		
 	}
 
 	public List<Novedad> getNovedades() {
@@ -114,6 +123,14 @@ public class NovedadBean extends BasePageBean {
 
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 	
 }

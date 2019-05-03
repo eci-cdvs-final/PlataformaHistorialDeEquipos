@@ -22,6 +22,20 @@
 			
 			<h:outputText value="Laboratorio: " />
 			<h:inputText value="#{equipoBean.laboratorioId}"/>
+			
+			<h:outputText value="Pantalla: " />
+			<h:inputText value="#{equipoBean.pantallaID}"/>
+			
+			<h:outputText value="Teclado: " />
+			<h:inputText value="#{equipoBean.tecladoID}"/>
+			
+			<h:outputText value="Mouse: " />
+			<h:inputText value="#{equipoBean.mouseID}"/>
+			
+			<h:outputText value="Torre: " />
+			<h:inputText value="#{equipoBean.torreID}"/>
+			
+
 		   
 		      <h:commandLink value="Registrar" actionListener="#{equipoBean.registrar()}" style="margin-right:20px;">
    	 		</h:commandLink>   
@@ -41,6 +55,27 @@
 			<h:outputText value="#{equipo.nombre}" />
 		</p:column>
 	</p:dataTable>
+	
+	
+	<h3>Elementos Disponibles Para Asociar</h3>
+			<p:dataTable id="elemento_table2" var="elemento" value="#{elementoBean.elementosLibres()}" rows="10"
+                 paginator="true">
+			<p:column headerText="Elementos Existentes-ID">
+				<h:outputText value="#{elemento.id}" />
+			</p:column>
+			<p:column headerText="Tipo">
+				<h:outputText value="#{elemento.tipo}" />
+			</p:column>
+			<p:column headerText="Equipo al que pertenece">
+				<h:outputText value="#{elemento.equipo}" />
+			</p:column>
+			<p:column headerText="Marca">
+				<h:outputText value="#{elemento.marca}" />
+			</p:column>
+			<p:column headerText="Nombre">
+				<h:outputText value="#{elemento.nombre}" />
+			</p:column>
+		</p:dataTable>
 	
         <h:commandLink value="Regresar" actionListener="#{usuarioBean.regresar()}" style="margin-right:20px;">
         </h:commandLink>

@@ -54,6 +54,19 @@
 		WHERE
 			e.equipoid is null
 	</select>
+	
+	<select id="getEquipoID" resultMap="ElementoResult"
+		parameterType="int">
+		SELECT
+			e.equipoid
+		FROM
+			ELEMENTO as e
+		WHERE e.id=#{elementoId}
+		
+		
+		
+	</select>
+	
 
 	<insert id="registrarElemento" parameterType="edu.cvds.entities.Elemento">
         insert into Elemento( tipo, equipoid, activo, marca, nombre) values ( #{tipo}, NULL, true, #{marca}, #{nombre})

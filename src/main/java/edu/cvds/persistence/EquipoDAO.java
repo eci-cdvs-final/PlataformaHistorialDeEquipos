@@ -12,4 +12,6 @@ public interface EquipoDAO {
 
 	public List<Equipo> equiposActivos();
 
+	public int mayor();
+
 }

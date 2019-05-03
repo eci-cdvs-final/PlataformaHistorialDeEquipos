@@ -15,4 +15,7 @@ public interface EquipoMapper {
 
 
 	public List<Equipo> equiposActivos();
+
+
+	public Equipo mayor();
 }
