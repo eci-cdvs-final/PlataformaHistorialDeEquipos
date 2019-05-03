@@ -59,8 +59,16 @@
         insert into Elemento( tipo, equipoid, activo, marca, nombre) values ( #{tipo}, NULL, true, #{marca}, #{nombre})
     </insert>
     
+    <insert id="registrarElementoConEquipo" parameterType="edu.cvds.entities.Elemento">
+        insert into Elemento(tipo, equipoid, activo, marca, nombre) values (#{tipo}, #{idEqui}, true, #{marca}, #{nombre})
+    </insert>
+    
     <update id="desasociarElemento" parameterType="map">
 		UPDATE elemento set equipoid=NULL where equipoid=#{idEqui} and tipo=(select tipo from elemento where id=#{idElem})
+	</update>
+	
+	 <update id="desasociarElemento2" parameterType="map">
+		UPDATE elemento set equipoid=NULL where equipoid=#{idEqui} and tipo=#{tipo}
 	</update>
 	
 	<update id="asociarElemento" parameterType="map">

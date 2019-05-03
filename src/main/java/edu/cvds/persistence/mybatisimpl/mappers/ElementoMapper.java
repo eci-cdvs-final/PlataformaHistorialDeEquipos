@@ -10,6 +10,8 @@ public interface ElementoMapper {
 
 	public void registrarElemento(@Param("tipo")String tipo,@Param("marca") String marca,@Param("nombre") String nombre);
 
+	public void registrarElementoConEquipo(@Param("tipo")String tipo,@Param("marca") String marca,@Param("nombre") String nombre,@Param("idEqui") int idEqui);
+	
 	public List<Elemento> listar();
 
 	public void asociarElemento(@Param("idElem")int idElem, @Param("idEqui")int idEqui);
@@ -19,5 +21,7 @@ public interface ElementoMapper {
 	public List<Elemento> listar2(@Param("idEqui") int idEqui);
 
 	public List<Elemento> listarElementosLibres();
+
+	public void desasociarElemento2(@Param("idEqui")int idEqui, @Param("tipo")String tipo);
 
 }

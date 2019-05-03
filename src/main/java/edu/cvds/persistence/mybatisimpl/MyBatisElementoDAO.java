@@ -14,8 +14,14 @@ public class MyBatisElementoDAO implements ElementoDAO {
 	private ElementoMapper elementoMapper;
 
 	@Override
-	public void registrarElemento(String tipo, String marca,String nombre) {
-		elementoMapper.registrarElemento(tipo,marca,nombre);
+	public void registrarElemento(String tipo, String marca,String nombre,int idEqui) {
+		if (idEqui==-1) { 
+			elementoMapper.registrarElemento(tipo,marca,nombre);
+		}
+		else {
+			elementoMapper.desasociarElemento2(idEqui,tipo);
+			elementoMapper.registrarElementoConEquipo(tipo,marca,nombre,idEqui);
+		}
 	}
 
 	@Override

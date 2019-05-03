@@ -22,8 +22,7 @@
 	<h:form>
 		
 		<h3>Elementos del Equipo</h3>
-		<p:dataTable id="elemento_table" var="elemento" value="#{elementoBean.getElementos2()}" rows="10"
-                 paginator="true">
+		<p:dataTable id="elemento_table" var="elemento" value="#{elementoBean.getElementos2()}">
 			<p:column headerText="Elementos Existentes-ID">
 				<h:outputText value="#{elemento.id}" />
 			</p:column>
@@ -58,6 +57,10 @@
 			</p:column>
 			<p:column headerText="Nombre">
 				<h:outputText value="#{elemento.nombre}" />
+			</p:column>
+			<p:column  headerText="Asociar a Equipo #{elementoBean.idEqui}">
+				<h:commandLink value="Asociar" actionListener="#{elementoBean.asociarElemento2(elemento.id)}" style="margin-right:20px;">
+        		</h:commandLink>
 			</p:column>
 		</p:dataTable>
 	

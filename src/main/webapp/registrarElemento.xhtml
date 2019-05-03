@@ -25,7 +25,10 @@
 	            <f:selectItem itemLabel="Torre" itemValue="Torre" />
 	            <f:selectItem itemLabel="Mouse" itemValue="Mouse" />
 	            <f:selectItem itemLabel="Teclado" itemValue="Teclado" />
-        </p:selectOneMenu>
+        	</p:selectOneMenu>
+        	
+        	<h:outputText value="Equipo(Opcional): " />
+			<h:inputText value="#{elementoBean.idEqui}"/>
 			
 			<h:outputText value="Marca: " />
 			<h:inputText value="#{elementoBean.marca}"/>
@@ -39,6 +42,7 @@
 	
 		 </h:panelGrid>
 		
+		<h2>Elementos Existentes</h2>
 	     <p:dataTable id="elemento_table" var="elemento" value="#{elementoBean.elementos}" rows="10"
                  paginator="true">
 			<p:column headerText="Elementos Existentes-ID">

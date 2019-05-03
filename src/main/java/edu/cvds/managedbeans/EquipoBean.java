@@ -31,8 +31,9 @@ public class EquipoBean extends BasePageBean {
 	/*private Injector injector;*/
 	private int id;
 	private String nombre;
+	private String laboratorioId;
+	private boolean activo;
 
-	
 	/*public EquipoBean() {
 		injector = super.getInjector();
 		laboratorioServices = injector.getInstance(LaboratorioServices.class);
@@ -41,7 +42,7 @@ public class EquipoBean extends BasePageBean {
 	public void registrar() {
 		try {
 			FacesContext context = FacesContext.getCurrentInstance();
-			laboratorioServices.registrarEquipo(nombre);
+			laboratorioServices.registrarEquipo(nombre,laboratorioId);
 		}
 		catch(Exception e) {
 
@@ -83,6 +84,22 @@ public class EquipoBean extends BasePageBean {
 			FacesContext context = FacesContext.getCurrentInstance();
 	        context.addMessage(null, new FacesMessage("Error", e.getMessage()));
 		}
+	}
+
+	public String getLaboratorioId() {
+		return laboratorioId;
+	}
+
+	public void setLaboratorioId(String laboratorioId) {
+		this.laboratorioId = laboratorioId;
+	}
+
+	public boolean isActivo() {
+		return activo;
+	}
+
+	public void setActivo(boolean activo) {
+		this.activo = activo;
 	}
 	
 }

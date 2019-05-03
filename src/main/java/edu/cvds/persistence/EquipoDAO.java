@@ -8,7 +8,7 @@ public interface EquipoDAO {
 
 	public List<Equipo> listarTodas();
 	
-	public void registar(String nombre);
+	public void registar(String nombre, String laboratorioId);
 
 	public List<Equipo> equiposActivos();
 

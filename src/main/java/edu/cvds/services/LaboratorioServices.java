@@ -16,11 +16,11 @@ public interface LaboratorioServices {
 	
 	public void registrarNovedad(int elementoid,int equipoid,Date fecha,String titulo,String usuarioid,String detalle);
 
-	public void registrarElemento(String tipo, String marca, String nombre);
+	public void registrarElemento(String tipo, String marca, String nombre, int idEqui);
 
 	public List<Elemento> listarElementos();
 
-	public void registrarEquipo(String nombre);
+	public void registrarEquipo(String nombre, String laboratorioId);
 
 	public List<Novedad> listarNovedades();
 

@@ -31,7 +31,7 @@ public class ElementoBean extends BasePageBean  {
 	private String tipo;
 	private String nombre;
 	private int idElem;
-	private int idEqui;
+	private int idEqui=-1;
 	
 	/*public ElementoBean() {
 		injector = super.getInjector();
@@ -78,7 +78,7 @@ public class ElementoBean extends BasePageBean  {
 	public void registrarElemento() {			
 			try {
 				FacesContext context = FacesContext.getCurrentInstance();
-				laboratorioServices.registrarElemento(tipo, marca,nombre);
+				laboratorioServices.registrarElemento(tipo, marca,nombre,idEqui);
 			}
 			catch(Exception e) {
 				FacesContext context = FacesContext.getCurrentInstance();
@@ -90,6 +90,17 @@ public class ElementoBean extends BasePageBean  {
 		try {
 			FacesContext context = FacesContext.getCurrentInstance();
 			laboratorioServices.asociarElemento(idElem, idEqui);
+		}
+		catch(Exception e) {
+			FacesContext context = FacesContext.getCurrentInstance();
+	        context.addMessage(null, new FacesMessage("Error", "Es posible que este tratando de ingresar una ID ya registrada"));
+		}
+	}
+	
+	public void asociarElemento2(int elementoid) {			
+		try {
+			FacesContext context = FacesContext.getCurrentInstance();
+			laboratorioServices.asociarElemento(elementoid, idEqui);
 		}
 		catch(Exception e) {
 			FacesContext context = FacesContext.getCurrentInstance();

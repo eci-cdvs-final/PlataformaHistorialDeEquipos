@@ -19,17 +19,23 @@
            
 			 <h:outputText value="Nombre: " />
 			<h:inputText value="#{equipoBean.nombre}"/>
+			
+			<h:outputText value="Laboratorio: " />
+			<h:inputText value="#{equipoBean.laboratorioId}"/>
 		   
 		      <h:commandLink value="Registrar" actionListener="#{equipoBean.registrar()}" style="margin-right:20px;">
    	 		</h:commandLink>   
-			
-		        
+				        
         </h:panelGrid>
 	
+	<h3>Historial De Equipos</h3>
 	<p:dataTable id="equi_table" var="equipo" value="#{equipoBean.equipos}" rows="10"
                  paginator="true">
 		<p:column headerText="Equipos Disponibles">
 			<h:outputText value="#{equipo.id}" />
+		</p:column>
+		<p:column headerText="Laboratorio al que Pertenece">
+			<h:outputText value="#{equipo.laboratorioId}" />
 		</p:column>
 		<p:column headerText="Nombre">
 			<h:outputText value="#{equipo.nombre}" />

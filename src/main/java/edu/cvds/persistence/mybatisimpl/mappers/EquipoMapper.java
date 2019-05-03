@@ -11,7 +11,7 @@ public interface EquipoMapper {
 	public List<Equipo> buscarEquipos();
 	
 	
-	public void registrarEquipo(@Param("nombre") String nombre);
+	public void registrarEquipo(@Param("nombre") String nombre,@Param("laboratorioId") String laboratorioId);
 
 
 	public List<Equipo> equiposActivos();

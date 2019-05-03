@@ -23,11 +23,14 @@
 		<p:column filterBy="#{equipo.laboratorioId}" headerText="Laboratorio al que pertenece">
 			<h:outputText value="#{equipo.laboratorioId}" />
 		</p:column>
+		<p:column filterBy="#{equipo.activo}" headerText="Estado">
+			<h:outputText value="#{equipo.activo}" />
+		</p:column>
 		<p:column filterBy="#{equipo.nombre}" headerText="Nombre"  filterMatchMode="contains">
 			<h:outputText value="#{equipo.nombre}" />
 		</p:column>
 		<p:column  headerText="Reporte de Novedades">
-			<p:button outcome="novedades" value="Ver Novedad" actionListener="#{novedadBean.setEquipoId(equi)}">
+			<p:button outcome="novedades" value="Ver Novedades" actionListener="#{novedadBean.setEquipoId(equi)}">
 				<f:param name="equipoid" value="${equipo.id}" />
 			</p:button>
 		</p:column>
