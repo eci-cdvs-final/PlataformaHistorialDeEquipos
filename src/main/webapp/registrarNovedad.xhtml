@@ -78,12 +78,7 @@
 			
 			 <p:outputLabel for="popup" value="Fecha:" />
        		 <p:calendar id="popup" value="#{novedadBean.fecha}" />
-			
-			<p:outputLabel for="console" value="Usuario:" />
-	        <p:selectOneMenu id="console" value="#{novedadBean.usuarioId}" style="width:125px">
-	            <f:selectItem itemLabel="#{usuarioBean.getUsuario().getUserName()}" itemValue="#{usuarioBean.getUsuario().getUserName()}" />
-	        </p:selectOneMenu>
-			
+			s			
 			<p:outputLabel value="Detalle: " />
 			<p:inputTextarea rows="5" cols="30"  maxlength="500" counterTemplate="{0} caracteres restantes." autoResize="false" value="#{novedadBean.detalle}"/>
 			

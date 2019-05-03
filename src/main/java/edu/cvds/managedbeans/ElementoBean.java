@@ -1,5 +1,6 @@
 package edu.cvds.managedbeans;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
@@ -7,6 +8,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+
+import org.apache.shiro.SecurityUtils;
 
 import com.google.inject.Injector;
 
@@ -90,6 +93,8 @@ public class ElementoBean extends BasePageBean  {
 		try {
 			FacesContext context = FacesContext.getCurrentInstance();
 			laboratorioServices.asociarElemento(idElem, idEqui);
+			java.util.Date fecha = new Date();
+			laboratorioServices.registrarNovedadElemento(idElem, idEqui, fecha, "Cambio de asociación", laboratorioServices.getUsuario(SecurityUtils.getSubject().getPrincipal().toString()).getUserName(), "Se asocio el elemento registrado con la ID:"+idElem+" al equipo registrado con la ID:"+idEqui);
 		}
 		catch(Exception e) {
 			FacesContext context = FacesContext.getCurrentInstance();
@@ -101,6 +106,8 @@ public class ElementoBean extends BasePageBean  {
 		try {
 			FacesContext context = FacesContext.getCurrentInstance();
 			laboratorioServices.asociarElemento(elementoid, idEqui);
+			java.util.Date fecha = new Date();
+			laboratorioServices.registrarNovedadElemento(elementoid, idEqui, fecha, "Cambio de asociación", laboratorioServices.getUsuario(SecurityUtils.getSubject().getPrincipal().toString()).getUserName(), "Se asocio el elemento registrado con la ID:"+elementoid+" al equipo registrado con la ID:"+idEqui);
 		}
 		catch(Exception e) {
 			FacesContext context = FacesContext.getCurrentInstance();

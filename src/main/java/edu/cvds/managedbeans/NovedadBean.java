@@ -11,6 +11,8 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
+import org.apache.shiro.SecurityUtils;
+
 import com.google.inject.Injector;
 
 import edu.cvds.entities.Equipo;
@@ -41,21 +43,21 @@ public class NovedadBean extends BasePageBean {
 	public void registrar() {
 		try {
 			FacesContext context = FacesContext.getCurrentInstance();
-			
+			usuarioId=laboratorioServices.getUsuario(SecurityUtils.getSubject().getPrincipal().toString()).getUserName();
+			if (tipo.equals("Equipo")) {
+				laboratorioServices.registrarNovedadEquipo(elementoId, fecha, titulo, usuarioId, detalle);
+			}
+			else{
+				equipoId=laboratorioServices.getEquipoID(elementoId);
+				laboratorioServices.registrarNovedadElemento(elementoId, equipoId, fecha, titulo, usuarioId, detalle);
+			}
 		}
 		catch(Exception e) {
 			
 			FacesContext context = FacesContext.getCurrentInstance();
-	        context.addMessage("registrarNovedad.xhtml", new FacesMessage("Error", "Es posible que este tratando de ingresar una ID ya registrada"));
+	        context.addMessage(null, new FacesMessage("Error", "Imposible registrar"));
 		}
 		
-		if (tipo.equals("Equipo")) {
-			laboratorioServices.registrarNovedadEquipo(elementoId, fecha, titulo, usuarioId, detalle);
-		}
-		else{
-			equipoId=laboratorioServices.getEquipoID(elementoId);
-			laboratorioServices.registrarNovedadElemento(elementoId, equipoId, fecha, titulo, usuarioId, detalle);
-		}
 		
 	}
 
