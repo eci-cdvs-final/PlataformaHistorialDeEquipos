@@ -13,16 +13,18 @@
 </h:head>
    
 <h:body>
-	<h1 >Plataforma Historial de Equipos
-	<img src="Resources/descarga.png"  style="width:8.5%;padding-left: 800px; float:right"></img>
+	<h1 >PLATAFORMA HISTORIAL DE EQUIPOS
+	<img id="destacada" src="Resources/descarga.png"  style="float:right"></img>
 	</h1>
 	
 	
 	<h:form> 
 	<p:growl id="growl" showDetail="true" sticky="true" />
-	<p:fieldset legend="Ingreso" style="margin-bottom:20px">
-	<img src="Resources/img-portada.jpg" style="width:100%;"></img>
-        <h:panelGrid columns="2" cellpadding="10">
+	
+	<p:fieldset  style="margin-bottom:20px;font-size:20px; color:#990000;">
+	<legend >INGRESO</legend>
+	<img  src="Resources/img-portada.jpg" style="width:100%;"></img>
+        <h:panelGrid columns="2" cellpadding="10" >
             <h:outputText value="Usuario: " />
 			<h:inputText value="#{usuarioBean.username}"/>
 			<h:outputText value="Contraseña: " />
@@ -39,4 +41,3 @@
 	
 </h:body>
 </html>
-

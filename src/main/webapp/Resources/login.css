@@ -1,12 +1,24 @@
 @charset "ISO-8859-1";
 
-body {
-  background-color: lightblue;
-}
 
+body {
+   margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+   background: linear-gradient(to right, #cc3300 0%, #ff0000 100%);
+   
+   }
 h1 {
+	 
+	 font-family:Courier New;
 	 border-style: solid;
-     border-color: #331669;
-     background-color:DodgerBlue;
-     font-size:3vw; color:Navy;
+     border-color: #990000;
+     background-color:#ffffff;
+     font-size:2vw; color:#990000;
+     text-align: center
 }
+#destacada {
+  width: 6%;
+  
+}  
