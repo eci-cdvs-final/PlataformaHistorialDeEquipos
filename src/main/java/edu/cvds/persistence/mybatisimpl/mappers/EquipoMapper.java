@@ -20,10 +20,14 @@ public interface EquipoMapper {
 	public Equipo mayor();
 
 
+
 	public List<Equipo> equiposLibres();
 	
 	public void asociar(@Param("laboratorioid") String laboratorioid, @Param("equipoid") int equipoid);
 
 
 	public void desasociar( @Param("id") int id);
+
+	public void darDeBajaEquipo(@Param("equipo")int equipo);
+
 }

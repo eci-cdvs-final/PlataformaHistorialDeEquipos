@@ -6,7 +6,7 @@ body {
   margin-bottom: 100px;
   margin-right: 150px;
   margin-left: 80px;
-   background: linear-gradient(to right, #cc3300 0%, #ff0000 100%);
+   background: linear-gradient(to left, #ff0000 0%, #ff8000 40%);
    
    }
 h1 {
@@ -22,3 +22,7 @@ h1 {
   width: 6%;
   
 }  
+.ui-datatable-tablewrapper table thead tr th {
+	background:#ffffcc;
+}
+

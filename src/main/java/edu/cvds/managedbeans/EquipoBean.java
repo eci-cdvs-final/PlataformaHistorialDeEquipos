@@ -59,7 +59,6 @@ public class EquipoBean extends BasePageBean {
 	        context.addMessage("registrarEquipo.xhtml", new FacesMessage("Error", "No fue posible el registro"));
 		}
 		
-		
 	}
 
 	public List<Equipo> getEquipos() {
@@ -145,8 +144,22 @@ public class EquipoBean extends BasePageBean {
 		this.tecladoID = tecladoID;
 	}
 	
+
 	public List<Equipo> equiposDisponibles(){
 		return laboratorioServices.listarEquiposDisponibles();
+	}
+	
+	public void darDeBaja(int equipo) {
+		try {
+			FacesContext context = FacesContext.getCurrentInstance();
+			System.out.println(equipo);
+			laboratorioServices.darDeBajaEquipo(equipo);
+		}
+		catch(Exception e) {
+			FacesContext context = FacesContext.getCurrentInstance();
+	        context.addMessage("registrarEquipo.xhtml", new FacesMessage("Error", "No fue posible Desasociar"));
+		}
+
 	}
 	
 }

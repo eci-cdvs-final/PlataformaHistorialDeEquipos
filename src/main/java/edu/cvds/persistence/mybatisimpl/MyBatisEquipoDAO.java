@@ -34,6 +34,7 @@ public class MyBatisEquipoDAO implements EquipoDAO {
 	}
 
 	@Override
+
 	public List<Equipo> listarLibres() {
 		return equipoMapper.equiposLibres();
 	}
@@ -50,4 +51,11 @@ public class MyBatisEquipoDAO implements EquipoDAO {
 		equipoMapper.desasociar(id);
 		
 	}
+	
+	@Override
+	public void darDeBajaEquipo(int equipo) {
+		equipoMapper.darDeBajaEquipo(equipo);
+	}
+
+
 }

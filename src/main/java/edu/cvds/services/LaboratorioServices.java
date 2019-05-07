@@ -14,8 +14,6 @@ public interface LaboratorioServices {
 	public List<Equipo> listarEquipos();
 	
 	public Usuario getUsuario(String username);
-	
-	
 
 	public void registrarElemento(String tipo, String marca, String nombre, int idEqui);
 
@@ -38,18 +36,23 @@ public interface LaboratorioServices {
 	public int mayorEquipo();
 
 	public void registrarNovedadEquipo(int equipoId, Date fecha, String titulo, String usuarioId,String detalle);
+	
 	public void registrarNovedadElemento(int elementoid,int equipoid,Date fecha,String titulo,String usuarioid,String detalle);
 
 	public int getEquipoID(int elementoId);
 
+	public void darDeBajaEquipo(int equipo);
+
 	public List<Laboratorio> listarLaboratorios();
 
 	public void crearLaboratorio(String id, String nombre, String descripcion, int capacidadDeEquipos);
+
 
 	public List<Equipo> listarEquiposDisponibles();
 
 	public void asociarLaboratorio(String laboratorioid, int equipoid);
 
 	public void desasociarLaboratorio(int id);
+
 
 }	

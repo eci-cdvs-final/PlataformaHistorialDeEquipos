@@ -14,10 +14,14 @@ public interface EquipoDAO {
 
 	public int mayor();
 
+
 	public List<Equipo> listarLibres();
 
 	public void asociar(String laboratorioid, int equipoid);
 
 	public void desasociar(int id);
+
+	public void darDeBajaEquipo(int equipo);
+
 
 }

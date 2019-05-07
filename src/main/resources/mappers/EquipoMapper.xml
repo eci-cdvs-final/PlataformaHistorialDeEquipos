@@ -23,6 +23,7 @@
 			e.nombre
 		FROM
 			EQUIPO as e
+		ORDER BY e.id DESC
 	</select>
 	
 	<select id="mayor" resultMap="EquipoResult"
@@ -46,6 +47,7 @@
 			EQUIPO as e 
 	</select>
 	
+
 	<select id="equiposLibres" resultMap="EquipoResult"
 		parameterType="int">
 		SELECT
@@ -66,4 +68,10 @@
 	</update>
 	
 	
+
+	<update id="darDeBajaEquipo" parameterType="map">
+		UPDATE equipo set activo=False where id=#{equipo}
+	</update>
+	
+
 	</mapper>
