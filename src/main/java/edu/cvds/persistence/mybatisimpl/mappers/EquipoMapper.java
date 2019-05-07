@@ -18,4 +18,7 @@ public interface EquipoMapper {
 
 
 	public Equipo mayor();
+
+
+	public void darDeBajaEquipo(@Param("equipo")int equipo);
 }

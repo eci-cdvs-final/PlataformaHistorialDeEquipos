@@ -41,4 +41,6 @@ public interface LaboratorioServices {
 
 	public int getEquipoID(int elementoId);
 
+	public void darDeBajaEquipo(int equipo);
+
 }	

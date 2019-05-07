@@ -116,4 +116,9 @@ public class LaboratorioServicesImpl implements LaboratorioServices {
 		
 	}
 
+	@Override
+	public void darDeBajaEquipo(int equipo) {
+		equipoDAO.darDeBajaEquipo(equipo);
+	}
+
 }

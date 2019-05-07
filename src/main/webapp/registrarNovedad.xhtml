@@ -112,6 +112,13 @@
 			
 			
 		</p:dataTable>
+		
+		<h3>Exportar A Excel</h3>
+		 <h:commandLink>
+	        <p:graphicImage url="Resources/excel.png" width="50"/>
+	        <p:dataExporter type="csv" target="novedad_table" fileName="ReporteDeEquipos"/>
+	    </h:commandLink>
+	    <br></br>
 	 
 		<h:commandLink value="Regresar" actionListener="#{usuarioBean.regresar()}" style="margin-right:20px;">
 	        	</h:commandLink> 
