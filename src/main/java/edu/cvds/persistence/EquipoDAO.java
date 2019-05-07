@@ -14,4 +14,6 @@ public interface EquipoDAO {
 
 	public int mayor();
 
+	public void darDeBajaEquipo(int equipo);
+
 }

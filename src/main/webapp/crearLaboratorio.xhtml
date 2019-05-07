@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Crear Laboratorio</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="shortcut icon" href="Resources/favicon.ico" />
+	<link rel="stylesheet" href="Resources/login.css" />
+	
+	                                                   
+</h:head>
+<h:body>
+	<h1>Crear Laboratorio</h1>
+	<h:form>
+	 <h:panelGrid columns="2" cellpadding="10">
+           
+			 <h:outputText value="Mnemónico: " />
+			<h:inputText value="#{laboratorioBean.id}"/>
+			
+			<h:outputText value="Nombre: " />
+			<h:inputText value="#{laboratorioBean.nombre}"/>
+			
+			<h:outputText value="Capacidad de Equipos: " />
+			<h:inputText value="#{laboratorioBean.capacidadDeEquipos}"/>	
+			
+			<h:outputText value="Descripcion: " />
+			<h:inputText value="#{laboratorioBean.descripcion}"/>	
+
+		   
+		      <h:commandLink value="Registrar" actionListener="#{laboratorioBean.registrar()}" style="margin-right:20px;">
+   	 		</h:commandLink>   
+				        
+        </h:panelGrid>
+	
+	<h3>Reporte de Laboratorios</h3>
+	<p:dataTable id="equi_table" var="laboratorio" value="#{laboratorioBean.laboratorios}" rows="10"
+                 paginator="true">
+		<p:column headerText="Mnemónico">
+			<h:outputText value="#{laboratorio.id}" />
+		</p:column>
+		<p:column headerText="Nombre">
+			<h:outputText value="#{laboratorio.nombre}" />
+		</p:column>
+		<p:column headerText="Descripción">
+			<h:outputText value="#{laboratorio.descripcion}" />
+		</p:column>
+		<p:column headerText="Capacidad de equipos">
+			<h:outputText value="#{laboratorio.capacidadDeEquipos}" />
+		</p:column>
+	</p:dataTable>
+	
+	
+	
+	</h:form>
+	
+	
+</h:body>
+</html>

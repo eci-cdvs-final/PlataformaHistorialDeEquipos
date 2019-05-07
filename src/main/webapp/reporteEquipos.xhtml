@@ -41,11 +41,27 @@
 				<f:param name="equipoid" value="${equipo.id}" />
 			</p:button>
 		</p:column>
+
 	</p:dataTable>	
 	 
-	<br></br>
-	   		<p:commandButton value="Regresar" id="Regresar"  action="#{usuarioBean.regresar()}" style="margin-right:20px;"  />   
-	   		<p:commandButton value="Logout" id="Logout"  action="#{usuarioBean.logout()}" style="margin-right:20px;"  />   	
+	
+		<p:column  headerText="Dar de baja">
+			<p:commandButton outcome="reporteEquipos" value="Dar de baja" actionListener="#{equipoBean.darDeBaja(equipo.id)}" style="margin-right:20px;" styleClass="ui-priority-primary" />
+		</p:column>
+	</p:dataTable>
+	
+	<h3>Exportar A Excel</h3>
+	 <h:commandLink>
+        <p:graphicImage url="Resources/excel.png" width="50"/>
+        <p:dataExporter type="csv" target="equi_table" fileName="ReporteDeEquipos"/>
+    </h:commandLink>
+    <br></br>
+		 
+	 <h:commandLink value="Regresar" actionListener="#{usuarioBean.regresar()}" style="margin-right:20px;">
+        </h:commandLink>
+        <h:commandLink value="Logout" actionListener="#{usuarioBean.logout()}" style="margin-right:20px;">
+        </h:commandLink> 
+
 	</h:form>
 	
 	

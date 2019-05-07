@@ -3,9 +3,11 @@ package edu.cvds.services.impl;
 
 import edu.cvds.entities.Elemento;
 import edu.cvds.entities.Equipo;
+import edu.cvds.entities.Laboratorio;
 import edu.cvds.entities.Novedad;
 import edu.cvds.persistence.ElementoDAO;
 import edu.cvds.persistence.EquipoDAO;
+import edu.cvds.persistence.LaboratorioDAO;
 import edu.cvds.persistence.NovedadDAO;
 
 import edu.cvds.entities.Usuario;
@@ -114,6 +116,25 @@ public class LaboratorioServicesImpl implements LaboratorioServices {
 	public int getEquipoID(int elementoId) {
 		return elementoDAO.getEquipoID(elementoId);
 		
+	}
+	
+	@Inject
+	private LaboratorioDAO laboratorioDAO;
+
+	@Override
+	public List<Laboratorio> listarLaboratorios() {
+		return laboratorioDAO.listar();
+	}
+
+	@Override
+	public void crearLaboratorio(String id, String nombre, String descripcion, int capacidadDeEquipos) {
+		laboratorioDAO.crear(id,nombre,descripcion,capacidadDeEquipos);
+		
+	}
+
+	@Override
+	public void darDeBajaEquipo(int equipo) {
+		equipoDAO.darDeBajaEquipo(equipo);
 	}
 
 }

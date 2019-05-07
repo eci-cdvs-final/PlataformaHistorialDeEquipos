@@ -33,4 +33,9 @@ public class MyBatisEquipoDAO implements EquipoDAO {
 		return equipoMapper.mayor().getId();
 	}
 
+	@Override
+	public void darDeBajaEquipo(int equipo) {
+		equipoMapper.darDeBajaEquipo(equipo);
+	}
+
 }
