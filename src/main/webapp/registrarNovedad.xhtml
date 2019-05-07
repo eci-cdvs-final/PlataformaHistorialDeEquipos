@@ -83,9 +83,9 @@
 			<p:inputTextarea rows="5" cols="30"  maxlength="500" counterTemplate="{0} caracteres restantes." autoResize="false" value="#{novedadBean.detalle}"/>
 			
 			
-	
-			<h:commandLink value="Registrar Novedad" actionListener="#{novedadBean.registrar()}" style="margin-right:20px; ">
-			</h:commandLink>
+		   	<p:commandButton value="Registrar Novedad"   action="#{novedadBean.registrar()}" style="margin-right:20px;"  /> 
+
+			
 	
 		 </h:panelGrid>
 		
@@ -113,11 +113,9 @@
 			
 		</p:dataTable>
 	 
-		<h:commandLink value="Regresar" actionListener="#{usuarioBean.regresar()}" style="margin-right:20px;">
-	        	</h:commandLink> 
-		  <h:commandLink value="Logout" actionListener="#{usuarioBean.logout()}" style="margin-right:20px;">
-	        </h:commandLink> 
-	        
+		<br></br>
+	   		<p:commandButton value="Regresar" id="Regresar"  action="#{usuarioBean.regresar()}" style="margin-right:20px;"  />   
+	   		<p:commandButton value="Logout" id="Logout"  action="#{usuarioBean.logout()}" style="margin-right:20px;"  />   	
 	</h:form>
 
 </h:body>

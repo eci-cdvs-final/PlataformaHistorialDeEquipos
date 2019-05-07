@@ -65,11 +65,10 @@
 			</p:column>
 		</p:dataTable>
 	
-	 
-	 <h:commandLink value="Regresar" actionListener="#{equipoBean.regresarReporteEquipos()}" style="margin-right:20px;">
-        </h:commandLink>
-        <h:commandLink value="Logout" actionListener="#{usuarioBean.logout()}" style="margin-right:20px;">
-        </h:commandLink> 
+	<br></br>
+	   		<p:commandButton value="Regresar" id="Regresar"  action="#{usuarioBean.gotoReporteEquipos()}" style="margin-right:20px;"  />   
+	   		<p:commandButton value="Logout" id="Logout"  action="#{usuarioBean.logout()}" style="margin-right:20px;"  />   	
+	         
 	</h:form>
 	
 	

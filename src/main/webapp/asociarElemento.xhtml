@@ -25,8 +25,7 @@
 			<h:outputText value="ID De Equipos: " />
 			<h:inputText value="#{elementoBean.idEqui}"/>
 	
-			<h:commandLink value="Asociar Elemento" actionListener="#{elementoBean.asociarElemento()}" style="margin-right:20px; ">
-			</h:commandLink>
+			<p:commandButton value="Asociar Elemento"   action="#{elementoBean.asociarElemento()}" style="margin-right:20px;"  /> 
 			
 		</h:panelGrid>
 		 
@@ -50,7 +49,7 @@
 			</p:column>
 		</p:dataTable>
 		
-		<h3> Equipos disponibles para asociar: </h3>
+		<h3 > Equipos disponibles para asociar: </h3>
 		<p:dataTable id="equi_table" var="equipo" value="#{equipoBean.equipos}" rows="10"
                  paginator="true">
 		<p:column headerText="Equipos Disponibles">
@@ -61,10 +60,10 @@
 		</p:column>
 	</p:dataTable>
 	 
-		<h:commandLink value="Regresar" actionListener="#{usuarioBean.regresar()}" style="margin-right:20px;">
-	        	</h:commandLink> 
-		  <h:commandLink value="Logout" actionListener="#{usuarioBean.logout()}" style="margin-right:20px;">
-	        </h:commandLink> 
+		    <br></br>
+	   		<p:commandButton value="Regresar" id="Regresar"  action="#{usuarioBean.regresar()}" style="margin-right:20px;"  />   
+	   		<p:commandButton value="Logout" id="Logout"  action="#{usuarioBean.logout()}" style="margin-right:20px;"  />   	
+		    
 	        
 	</h:form>
 

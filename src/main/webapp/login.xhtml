@@ -30,8 +30,9 @@
 			<h:outputText value="Contraseña: " />
 		        <h:inputSecret value="#{usuarioBean.password}" />
 		   
-		      <h:commandLink value="Login" actionListener="#{usuarioBean.login()}" style="margin-right:20px;">
-   	 		</h:commandLink>   
+		     
+   	 		<p:commandButton value="Login"   action="#{usuarioBean.login()}" style="margin-right:20px;"  /> 
+   	 		
 			
 		        
         </h:panelGrid>

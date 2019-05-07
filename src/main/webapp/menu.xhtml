@@ -15,10 +15,14 @@
 	                                                   
 </h:head>
 <h:body>
-<h1>Bienvenid@ al menú principal  #{usuarioBean.getUsuario().getNombreCompleto()}</h1>
+<h1>Bienvenid@ al menú principal  <br></br> #{usuarioBean.getUsuario().getNombreCompleto()}</h1>
 
- <h:form>  
+
+ <h:form> 
+      
+<h:panelGrid columns="2" cellpadding="10" >  
 <p:menu>
+        
         <p:submenu label="Registrar">
             <p:menuitem value="Registrar Elemento" action="#{usuarioBean.gotoRegistrarElemento()}"  />
             <p:menuitem value="Registrar Equipo" action="#{usuarioBean.gotoRegistrarEquipo()}"  />
@@ -31,10 +35,14 @@
             <p:menuitem value="Reporte de Equipos" action="#{usuarioBean.gotoReporteEquipos()}"  />
         </p:submenu>
           
-    </p:menu>
+        </p:menu>
+	    <img  src="Resources/Coliseo.jpg" style="width:80%;float:right"></img>
     
-    <h:commandLink value="Logout" actionListener="#{usuarioBean.logout()}" style="margin-right:20px;">
-        </h:commandLink> 
+</h:panelGrid>
+
+    <br></br>
+    <p:commandButton value="Logout" id="Logout"  action="#{usuarioBean.logout()}" style="margin-right:20px;"  />
+    
 </h:form>
 </h:body>
 </html>
