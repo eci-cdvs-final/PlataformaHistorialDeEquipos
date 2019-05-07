@@ -21,6 +21,20 @@
 <h:body>
 	<h1>Administrar Equipo #{elementoBean.idEqui}</h1>
 	<h:form>
+		<p:menubar>
+	        <p:submenu label="Registrar">
+	            <p:menuitem value="Registrar Elemento" action="#{usuarioBean.gotoRegistrarElemento()}"  />
+	            <p:menuitem value="Registrar Equipo" action="#{usuarioBean.gotoRegistrarEquipo()}"  />
+	            <p:menuitem value="Registrar Novedad" action="#{usuarioBean.gotoRegistrarNovedad()}"  />
+	             <p:menuitem value="Crear Laboratorio" action="#{usuarioBean.gotoCrearLaboratorio()}"  />
+	        </p:submenu>
+	        <p:submenu label="Asociar">
+	            <p:menuitem value="Asociar Elemento" action="#{usuarioBean.gotoAsociarElemento()}"  />
+	        </p:submenu>
+	         <p:submenu label="Reportes">
+	            <p:menuitem value="Reporte de Equipos" action="#{usuarioBean.gotoReporteEquipos()}"  />
+	        </p:submenu>
+	    </p:menubar>
 		
 		<h3>Elementos del Equipo</h3>
 		<p:dataTable id="elemento_table" var="elemento" value="#{elementoBean.getElementos2()}">

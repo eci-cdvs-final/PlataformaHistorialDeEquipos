@@ -17,6 +17,20 @@
 <h:body>
 	<h1>Crear Laboratorio</h1>
 	<h:form>
+		<p:menubar>
+	        <p:submenu label="Registrar">
+	            <p:menuitem value="Registrar Elemento" action="#{usuarioBean.gotoRegistrarElemento()}"  />
+	            <p:menuitem value="Registrar Equipo" action="#{usuarioBean.gotoRegistrarEquipo()}"  />
+	            <p:menuitem value="Registrar Novedad" action="#{usuarioBean.gotoRegistrarNovedad()}"  />
+	             <p:menuitem value="Crear Laboratorio" action="#{usuarioBean.gotoCrearLaboratorio()}"  />
+	        </p:submenu>
+	        <p:submenu label="Asociar">
+	            <p:menuitem value="Asociar Elemento" action="#{usuarioBean.gotoAsociarElemento()}"  />
+	        </p:submenu>
+	         <p:submenu label="Reportes">
+	            <p:menuitem value="Reporte de Equipos" action="#{usuarioBean.gotoReporteEquipos()}"  />
+	        </p:submenu>
+	    </p:menubar>
 	 <h:panelGrid columns="2" cellpadding="10">
            
 			 <h:outputText value="Mnemónico: " />
@@ -30,12 +44,7 @@
 			
 			<h:outputText value="Descripcion: " />
 			<h:inputText value="#{laboratorioBean.descripcion}"/>	
-
-		  
-	
-	
-		       
-				        
+  
         </h:panelGrid>
 	
 	<h3>Equipos asociados en el Laboratorio</h3>
@@ -60,9 +69,8 @@
 		</p:column>
 			<p:column headerText="Asociar"><h:commandLink value="Asociar" actionListener="#{laboratorioBean.asociar(equipo)}" update="@form"></h:commandLink></p:column>
 		</p:dataTable>
-	
-	 <h:commandLink value="Registrar" actionListener="#{laboratorioBean.registrar()}" style="margin-right:20px;">
-   	 		</h:commandLink> 
+	 
+	 <p:commandButton value="Registrar" id="Regresar"  action="#{laboratorioBean.registrar()}" style="margin-right:20px;"  />   
 	
 	
 	
@@ -85,10 +93,10 @@
 	</p:dataTable>
 	
 	
-	<h:commandLink value="Regresar" actionListener="#{usuarioBean.regresar()}" style="margin-right:20px;">
-	        	</h:commandLink> 
-		  <h:commandLink value="Logout" actionListener="#{usuarioBean.logout()}" style="margin-right:20px;">
-	        </h:commandLink> 
+	<br></br>
+	   		<p:commandButton value="Regresar" id="Regresar"  action="#{usuarioBean.regresar()}" style="margin-right:20px;"  />   
+	   		<p:commandButton value="Logout" id="Logout"  action="#{usuarioBean.logout()}" style="margin-right:20px;"  />   	
+	        
 	</h:form>
 	
 		
