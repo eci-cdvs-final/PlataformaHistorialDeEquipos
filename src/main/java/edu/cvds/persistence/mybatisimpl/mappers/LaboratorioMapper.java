@@ -13,4 +13,6 @@ public interface LaboratorioMapper {
 	public void crear(@Param("id") String id,@Param("nombre") String nombre,@Param("descripcion") String descripcion,@Param("capacidadDeEquipos") int capacidadDeEquipos);
 
 	
+
+	
 }

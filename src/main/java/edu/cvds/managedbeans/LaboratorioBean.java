@@ -1,5 +1,6 @@
 package edu.cvds.managedbeans;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
@@ -25,12 +26,16 @@ public class LaboratorioBean extends BasePageBean {
 	private String descripcion;
 	private int capacidadDeEquipos;
 	private boolean activo;
+	private List <Equipo> equipos = new ArrayList<Equipo>();
 	
 	
 	public void registrar() {
 		try {
 			FacesContext context = FacesContext.getCurrentInstance();
 			laboratorioServices.crearLaboratorio(id,nombre,descripcion,capacidadDeEquipos);
+			for (Equipo e:equipos) {
+				laboratorioServices.asociarLaboratorio(id,e.getId());
+			}
 		}
 		catch(Exception e) {
 			FacesContext context = FacesContext.getCurrentInstance();
@@ -39,10 +44,20 @@ public class LaboratorioBean extends BasePageBean {
 		
 
 	}
-
+	
+	public List<Equipo> getEquipos(){
+		return equipos;
+	}
+	
+	public List<Equipo> getEquiposDisponibles(){
+		return laboratorioServices.listarEquiposDisponibles();
+	}
+	
 	public List<Laboratorio> getLaboratorios() {
 		return laboratorioServices.listarLaboratorios();
 	}
+	
+	
 	
 	public String getId() {
 		return id;
@@ -74,4 +89,17 @@ public class LaboratorioBean extends BasePageBean {
 	public void setActivo(boolean activo) {
 		this.activo = activo;
 	}
+	
+	public void asociar(Equipo eq) {
+		laboratorioServices.asociarLaboratorio("",eq.getId());
+		equipos.add(eq);
+		
+	}
+	
+	public void desasociar(Equipo eq) {
+		laboratorioServices.desasociarLaboratorio(eq.getId());
+		equipos.remove(eq);
+		
+	}
+	
 }

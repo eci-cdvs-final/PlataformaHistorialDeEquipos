@@ -46,4 +46,24 @@
 			EQUIPO as e 
 	</select>
 	
+	<select id="equiposLibres" resultMap="EquipoResult"
+		parameterType="int">
+		SELECT
+			e.id,
+			e.nombre
+		FROM
+			EQUIPO as e
+		WHERE e.laboratorioid is null AND e.activo=True
+	</select>
+	
+	
+	<update id="asociar" parameterType="map">
+		UPDATE equipo set Laboratorioid=#{laboratorioid} where id=#{equipoid}
+	</update>
+	
+	<update id="desasociar" parameterType="map">
+		UPDATE equipo set Laboratorioid=null where id=#{id}
+	</update>
+	
+	
 	</mapper>

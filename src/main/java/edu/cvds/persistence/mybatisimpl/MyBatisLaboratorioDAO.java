@@ -28,4 +28,6 @@ public class MyBatisLaboratorioDAO implements LaboratorioDAO {
 
 	
 
+	
+
 }

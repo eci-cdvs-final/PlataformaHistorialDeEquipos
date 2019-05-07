@@ -132,4 +132,21 @@ public class LaboratorioServicesImpl implements LaboratorioServices {
 		
 	}
 
+	@Override
+	public List<Equipo> listarEquiposDisponibles() {
+		return equipoDAO.listarLibres();
+	}
+
+	@Override
+	public void asociarLaboratorio(String laboratorioid, int equipoid) {
+		equipoDAO.asociar(laboratorioid,equipoid);
+		
+	}
+
+	@Override
+	public void desasociarLaboratorio(int id) {
+		equipoDAO.desasociar(id);
+		
+	}
+
 }

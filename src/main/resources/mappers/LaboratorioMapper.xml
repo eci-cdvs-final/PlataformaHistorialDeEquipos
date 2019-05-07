@@ -29,6 +29,7 @@
 	<insert id="crear" parameterType="edu.cvds.entities.Laboratorio">
         insert into laboratorio(id,nombre,descripcion,capacidadequipos,activo) values (#{id},#{nombre},#{descripcion},#{capacidadDeEquipos},True)
     </insert>
-	
+    
+  
 	
 </mapper>

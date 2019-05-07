@@ -145,4 +145,8 @@ public class EquipoBean extends BasePageBean {
 		this.tecladoID = tecladoID;
 	}
 	
+	public List<Equipo> equiposDisponibles(){
+		return laboratorioServices.listarEquiposDisponibles();
+	}
+	
 }

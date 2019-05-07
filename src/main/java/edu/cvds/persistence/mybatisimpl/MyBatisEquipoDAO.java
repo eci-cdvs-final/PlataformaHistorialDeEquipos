@@ -33,4 +33,21 @@ public class MyBatisEquipoDAO implements EquipoDAO {
 		return equipoMapper.mayor().getId();
 	}
 
+	@Override
+	public List<Equipo> listarLibres() {
+		return equipoMapper.equiposLibres();
+	}
+
+	
+	@Override
+	public void asociar(String laboratorioid, int equipoid) {
+		equipoMapper.asociar(laboratorioid, equipoid);
+		
+	}
+
+	@Override
+	public void desasociar(int id) {
+		equipoMapper.desasociar(id);
+		
+	}
 }

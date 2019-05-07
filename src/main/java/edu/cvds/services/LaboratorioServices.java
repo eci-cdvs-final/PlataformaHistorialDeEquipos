@@ -46,4 +46,10 @@ public interface LaboratorioServices {
 
 	public void crearLaboratorio(String id, String nombre, String descripcion, int capacidadDeEquipos);
 
+	public List<Equipo> listarEquiposDisponibles();
+
+	public void asociarLaboratorio(String laboratorioid, int equipoid);
+
+	public void desasociarLaboratorio(int id);
+
 }	
