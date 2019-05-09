@@ -51,4 +51,10 @@ public class MyBatisElementoDAO implements ElementoDAO {
 		
 	}
 
+	@Override
+	public void desasociarDeEquipo(int equipo) {
+		elementoMapper.desasociarDeEquipo(equipo);
+		
+	}
+
 }

@@ -19,4 +19,6 @@ public interface ElementoDAO {
 
 	int getEquipoID(int elementoId);
 
+	void desasociarDeEquipo(int equipo);
+
 }

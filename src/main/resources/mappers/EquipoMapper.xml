@@ -20,7 +20,8 @@
 		parameterType="int">
 		SELECT
 			e.id,
-			e.nombre
+			e.nombre,
+			e.laboratorioID
 		FROM
 			EQUIPO as e
 		ORDER BY e.id DESC

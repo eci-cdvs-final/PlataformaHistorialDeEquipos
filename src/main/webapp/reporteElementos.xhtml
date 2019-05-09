@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Reporte de Elementos</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="shortcut icon" href="Resources/favicon.ico" />
+	<link rel="stylesheet" href="Resources/login.css" />
+	
+	                                                   
+</h:head>
+<h:body>
+	<h1>Reporte de Elementos</h1>
+	<h:form>
+	
+	<p:dataTable id="elemento_table" var="elemento" value="#{elementoBean.elementos}" rows="10"
+                 paginator="true">
+			<p:column var="elem" filterBy="#{elemento.id}" headerText="Elementos Existentes-ID">
+				<h:outputText value="#{elemento.id}" />
+			</p:column>
+			<p:column filterBy="#{elemento.tipo}" headerText="Tipo">
+				<h:outputText value="#{elemento.tipo}" />
+			</p:column>
+			<p:column filterBy="#{elemento.equipo}" headerText="Equipo al que pertenece">
+				<h:outputText value="#{elemento.equipo}" />
+			</p:column>
+			<p:column filterBy="#{elemento.activo}" headerText="Activo">
+				<h:outputText value="#{elemento.activo}" />
+			</p:column>
+			<p:column filterBy="#{elemento.marca}" headerText="Marca">
+				<h:outputText value="#{elemento.marca}" />
+			</p:column>
+			<p:column filterBy="#{elemento.nombre}" headerText="Nombre">
+				<h:outputText value="#{elemento.nombre}" />
+			</p:column>
+			<p:column  headerText="Reporte de Novedades">
+				<p:button outcome="novedades" value="Ver Novedades" actionListener="#{novedadBean.setEquipoId(elem)}">
+					<f:param name="equipoid" value="#{elemento.id}" />
+				</p:button>
+			</p:column>
+		</p:dataTable>
+	
+	<h3>Exportar A Excel</h3>
+	 <h:commandLink>
+        <p:graphicImage url="Resources/excel.png" width="50"/>
+        <p:dataExporter type="csv" target="equi_table" fileName="ReporteDeEquipos"/>
+    </h:commandLink>
+		 
+	 <br></br>
+	   		<p:commandButton value="Regresar" id="Regresar"  action="#{usuarioBean.regresar()}" style="margin-right:20px;"  />   
+	   		<p:commandButton value="Logout" id="Logout"  action="#{usuarioBean.logout()}" style="margin-right:20px;"  /> 
+	</h:form>
+	
+	
+</h:body>
+</html>

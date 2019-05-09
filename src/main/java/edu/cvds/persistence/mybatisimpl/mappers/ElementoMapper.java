@@ -27,4 +27,6 @@ public interface ElementoMapper {
 
 	public Elemento getEquipoID(@Param("elementoId") int elementoId);
 
+	public void desasociarDeEquipo(@Param("equipo")int equipo);
+
 }

@@ -22,6 +22,7 @@
 			e.tipo,
 			e.equipoid,
 			e.marca,
+			e.activo,
 			e.nombre
 		FROM
 			ELEMENTO as e
@@ -88,5 +89,8 @@
 		UPDATE elemento set equipoid=#{idEqui} where id=#{idElem}
 	</update>
 	
+	<update id="desasociarDeEquipo" parameterType="map">
+		UPDATE elemento set equipoid=NULL where equipoid=#{equipo}
+	</update>
 	
 	</mapper>
