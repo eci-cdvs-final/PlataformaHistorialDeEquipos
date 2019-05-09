@@ -23,7 +23,7 @@
 			n.detalle
 		FROM
 			NOVEDAD as n
-			ORDER BY n.fecha DESC
+			ORDER BY n.fecha ASC
 	</select>
 	
 	<select id="buscarNovedades2" resultMap="NovedadResult"

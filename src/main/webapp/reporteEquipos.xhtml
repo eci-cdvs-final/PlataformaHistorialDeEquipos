@@ -31,21 +31,18 @@
 		<p:column filterBy="#{equipo.nombre}" headerText="Nombre"  filterMatchMode="contains">
 			<h:outputText value="#{equipo.nombre}" />
 		</p:column>
-		<p:column  headerText="Reporte de Novedades">
+		<p:column  headerText="Reporte de Novedades" exportable="false">
 			<p:button outcome="novedades" value="Ver Novedades" actionListener="#{novedadBean.setEquipoId(equi)}">
 				<f:param name="equipoid" value="${equipo.id}" />
 			</p:button>
 		</p:column>
-		<p:column  headerText="Revisar Equipo">
+		<p:column  headerText="Revisar Equipo" exportable="false">
 			<p:button outcome="equipos" value="Administrar Equipo">
 				<f:param name="equipoid" value="${equipo.id}" />
 			</p:button>
 		</p:column>
-
 		
-	 
-	
-		<p:column  headerText="Dar de baja">
+		<p:column  headerText="Dar de baja" exportable="false">
 			<p:commandButton outcome="reporteEquipos" value="Dar de baja" actionListener="#{equipoBean.darDeBaja(equipo.id)}" style="margin-right:20px;" styleClass="ui-priority-primary" />
 		</p:column>
 	</p:dataTable>

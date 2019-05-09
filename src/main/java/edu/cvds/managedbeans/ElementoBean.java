@@ -35,6 +35,7 @@ public class ElementoBean extends BasePageBean  {
 	private String nombre;
 	private int idElem;
 	private int idEqui=-1;
+	private boolean activo;
 	
 	/*public ElementoBean() {
 		injector = super.getInjector();
@@ -67,6 +68,10 @@ public class ElementoBean extends BasePageBean  {
 	
 	public List<Elemento> getElementos() {
 		return laboratorioServices.listarElementos();
+	}
+	
+	public List<Elemento> elemento() {
+		return laboratorioServices.listarElemento(idElem);
 	}
 	
 	public List<Elemento> elementosLibres() {
@@ -137,5 +142,25 @@ public class ElementoBean extends BasePageBean  {
 
 	public void setIdEqui(int idEqui) {
 		this.idEqui = idEqui;
+	}
+
+	public boolean isActivo() {
+		return activo;
+	}
+
+	public void setActivo(boolean activo) {
+		this.activo = activo;
+	}
+	
+	public void darDeBaja(int elemento) {
+		try {
+			FacesContext context = FacesContext.getCurrentInstance();
+			laboratorioServices.darDeBajaElemento(elemento);
+		}
+		catch(Exception e) {
+			FacesContext context = FacesContext.getCurrentInstance();
+	        context.addMessage("registrarEquipo.xhtml", new FacesMessage("Error", "No fue posible Desasociar"));
+		}
+
 	}
 }

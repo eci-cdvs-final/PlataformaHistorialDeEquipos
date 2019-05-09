@@ -20,53 +20,27 @@
 
 <h:body>
 	<h1>Administrar Elemento #{elementoBean.idElem}</h1>
-	<h:form>
-		
-		<h3>Elementos del Equipo</h3>
-		<p:dataTable id="elemento_table" var="elemento" value="#{elementoBean.getElementos2()}">
-			<p:column headerText="Elementos Existentes-ID">
-				<h:outputText value="#{elemento.id}" />
-			</p:column>
-			<p:column headerText="Tipo">
-				<h:outputText value="#{elemento.tipo}" />
-			</p:column>
-			<p:column headerText="Equipo al que pertenece">
-				<h:outputText value="#{elemento.equipo}" />
-			</p:column>
-			<p:column headerText="Marca">
-				<h:outputText value="#{elemento.marca}" />
-			</p:column>
-			<p:column headerText="Nombre">
-				<h:outputText value="#{elemento.nombre}" />
-			</p:column>
-		</p:dataTable>
-		
-		<h3>Elementos Disponibles Para Asociar</h3>
-			<p:dataTable id="elemento_table2" var="elemento" value="#{elementoBean.elementosLibres()}" rows="10"
-                 paginator="true">
-			<p:column headerText="Elementos Existentes-ID">
-				<h:outputText value="#{elemento.id}" />
-			</p:column>
-			<p:column headerText="Tipo">
-				<h:outputText value="#{elemento.tipo}" />
-			</p:column>
-			<p:column headerText="Equipo al que pertenece">
-				<h:outputText value="#{elemento.equipo}" />
-			</p:column>
-			<p:column headerText="Marca">
-				<h:outputText value="#{elemento.marca}" />
-			</p:column>
-			<p:column headerText="Nombre">
-				<h:outputText value="#{elemento.nombre}" />
-			</p:column>
-			<p:column  headerText="Asociar a Equipo #{elementoBean.idEqui}">
-				<h:commandLink value="Asociar" actionListener="#{elementoBean.asociarElemento2(elemento.id)}" style="margin-right:20px;">
-        		</h:commandLink>
-			</p:column>
-		</p:dataTable>
 	
+	<h:form>
+	<p:dataTable id="elemento_table" var="elemento" value="#{elementoBean.elemento()}">
+			<p:column headerText="Tipo">
+				<h:outputText value="#{elemento.tipo}" />
+			</p:column>
+			<p:column headerText="Equipo al que pertenece">
+				<h:outputText value="#{elemento.equipo}" />
+			</p:column>
+			<p:column headerText="Marca">
+				<h:outputText value="#{elemento.marca}" />
+			</p:column>
+			<p:column headerText="Nombre">
+				<h:outputText value="#{elemento.nombre}" />
+			</p:column>
+			<p:column  headerText="Activo">
+				<h:outputText value="#{elemento.activo}" />
+			</p:column>
+		</p:dataTable>
 	<br></br>
-	   		<p:commandButton value="Regresar" id="Regresar"  action="#{usuarioBean.gotoReporteEquipos()}" style="margin-right:20px;"  />   
+	   		<p:commandButton value="Regresar" id="Regresar"  action="#{usuarioBean.gotoReporteElementos()}" style="margin-right:20px;"  />   
 	   		<p:commandButton value="Logout" id="Logout"  action="#{usuarioBean.logout()}" style="margin-right:20px;"  />   	
 	         
 	</h:form>

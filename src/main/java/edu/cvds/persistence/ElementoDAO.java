@@ -21,4 +21,8 @@ public interface ElementoDAO {
 
 	void desasociarDeEquipo(int equipo);
 
+	List<Elemento> listarElemento(int idElem);
+
+	void darDeBajaElemento(int elemento);
+
 }

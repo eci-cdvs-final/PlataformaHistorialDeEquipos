@@ -152,7 +152,6 @@ public class EquipoBean extends BasePageBean {
 	public void darDeBaja(int equipo) {
 		try {
 			FacesContext context = FacesContext.getCurrentInstance();
-			System.out.println(equipo);
 			laboratorioServices.darDeBajaEquipo(equipo);
 		}
 		catch(Exception e) {

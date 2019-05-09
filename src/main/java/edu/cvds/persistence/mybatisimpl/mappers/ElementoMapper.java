@@ -29,4 +29,8 @@ public interface ElementoMapper {
 
 	public void desasociarDeEquipo(@Param("equipo")int equipo);
 
+	public List<Elemento> listarElemento(@Param("elementoId")int idElem);
+
+	public void darDeBajaElemento(@Param("elementoId")int elemento);
+
 }

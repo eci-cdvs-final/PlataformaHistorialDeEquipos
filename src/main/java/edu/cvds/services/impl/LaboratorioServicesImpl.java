@@ -161,4 +161,14 @@ public class LaboratorioServicesImpl implements LaboratorioServices {
 			return novedadDAO.listarElem(elementoId);
 		}
 
+		@Override
+		public List<Elemento> listarElemento(int idElem) {
+			return elementoDAO.listarElemento(idElem);
+		}
+
+		@Override
+		public void darDeBajaElemento(int elemento) {
+			elementoDAO.darDeBajaElemento(elemento);
+		}
+
 }

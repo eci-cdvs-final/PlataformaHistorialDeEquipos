@@ -24,6 +24,7 @@
 			l.capacidadequipos
 		FROM
 			LABORATORIO as l
+		ORDER BY l.id ASC
 	</select>
 	
 	<insert id="crear" parameterType="edu.cvds.entities.Laboratorio">

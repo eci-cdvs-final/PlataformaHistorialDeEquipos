@@ -26,6 +26,7 @@
 			e.nombre
 		FROM
 			ELEMENTO as e
+		ORDER BY e.id ASC
 	</select>
 	
 	<select id="listar2" resultMap="ElementoResult"
@@ -40,6 +41,7 @@
 			ELEMENTO as e
 		WHERE
 			e.equipoid=#{idEqui}
+		ORDER BY e.id ASC
 	</select>
 	
 	<select id="listarElementosLibres" resultMap="ElementoResult"
@@ -54,6 +56,7 @@
 			ELEMENTO as e
 		WHERE
 			e.equipoid is null
+		ORDER BY e.id ASC
 	</select>
 	
 	<select id="getEquipoID" resultMap="ElementoResult"
@@ -63,11 +66,24 @@
 		FROM
 			ELEMENTO as e
 		WHERE e.id=#{elementoId}
-		
-		
-		
+		ORDER BY e.id ASC
+
 	</select>
 	
+	<select id="listarElemento" resultMap="ElementoResult"
+		parameterType="int">
+		SELECT
+			e.id,
+			e.tipo,
+			e.equipoid,
+			e.activo,
+			e.marca,
+			e.nombre
+		FROM
+			ELEMENTO as e
+		WHERE
+			e.id=#{elementoId}
+	</select>
 
 	<insert id="registrarElemento" parameterType="edu.cvds.entities.Elemento">
         insert into Elemento( tipo, equipoid, activo, marca, nombre) values ( #{tipo}, NULL, true, #{marca}, #{nombre})
@@ -91,6 +107,10 @@
 	
 	<update id="desasociarDeEquipo" parameterType="map">
 		UPDATE elemento set equipoid=NULL where equipoid=#{equipo}
+	</update>
+	
+	<update id="darDeBajaElemento" parameterType="map">
+		UPDATE elemento set activo=False where id=#{elementoId}
 	</update>
 	
 	</mapper>

@@ -24,7 +24,7 @@
 			e.laboratorioID
 		FROM
 			EQUIPO as e
-		ORDER BY e.id DESC
+		ORDER BY e.id ASC
 	</select>
 	
 	<select id="mayor" resultMap="EquipoResult"
@@ -57,6 +57,7 @@
 		FROM
 			EQUIPO as e
 		WHERE e.laboratorioid is null AND e.activo=True
+		ORDER BY e.id ASC
 	</select>
 	
 	

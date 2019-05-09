@@ -57,4 +57,14 @@ public class MyBatisElementoDAO implements ElementoDAO {
 		
 	}
 
+	@Override
+	public List<Elemento> listarElemento(int idElem) {
+		return elementoMapper.listarElemento(idElem);
+	}
+
+	@Override
+	public void darDeBajaElemento(int elemento) {
+		elementoMapper.darDeBajaElemento(elemento);
+	}
+
 }

@@ -56,5 +56,9 @@ public interface LaboratorioServices {
 
 	public List<Novedad> listarNovedadesElem(int elementoId);
 
+	public List<Elemento> listarElemento(int idElem);
+
+	public void darDeBajaElemento(int elemento);
+
 
 }	
