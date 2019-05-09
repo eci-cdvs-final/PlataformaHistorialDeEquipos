@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Elementos</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="shortcut icon" href="Resources/favicon.ico" />
+	<link rel="stylesheet" href="Resources/login.css" />
+	                                                   
+</h:head>
+
+<f:metadata>
+	<f:viewParam name="elementoid" value="#{elementoBean.idElem}"/>
+</f:metadata>
+
+<h:body>
+	<h1>Administrar Elemento #{elementoBean.idElem}</h1>
+	<h:form>
+		
+		<h3>Elementos del Equipo</h3>
+		<p:dataTable id="elemento_table" var="elemento" value="#{elementoBean.getElementos2()}">
+			<p:column headerText="Elementos Existentes-ID">
+				<h:outputText value="#{elemento.id}" />
+			</p:column>
+			<p:column headerText="Tipo">
+				<h:outputText value="#{elemento.tipo}" />
+			</p:column>
+			<p:column headerText="Equipo al que pertenece">
+				<h:outputText value="#{elemento.equipo}" />
+			</p:column>
+			<p:column headerText="Marca">
+				<h:outputText value="#{elemento.marca}" />
+			</p:column>
+			<p:column headerText="Nombre">
+				<h:outputText value="#{elemento.nombre}" />
+			</p:column>
+		</p:dataTable>
+		
+		<h3>Elementos Disponibles Para Asociar</h3>
+			<p:dataTable id="elemento_table2" var="elemento" value="#{elementoBean.elementosLibres()}" rows="10"
+                 paginator="true">
+			<p:column headerText="Elementos Existentes-ID">
+				<h:outputText value="#{elemento.id}" />
+			</p:column>
+			<p:column headerText="Tipo">
+				<h:outputText value="#{elemento.tipo}" />
+			</p:column>
+			<p:column headerText="Equipo al que pertenece">
+				<h:outputText value="#{elemento.equipo}" />
+			</p:column>
+			<p:column headerText="Marca">
+				<h:outputText value="#{elemento.marca}" />
+			</p:column>
+			<p:column headerText="Nombre">
+				<h:outputText value="#{elemento.nombre}" />
+			</p:column>
+			<p:column  headerText="Asociar a Equipo #{elementoBean.idEqui}">
+				<h:commandLink value="Asociar" actionListener="#{elementoBean.asociarElemento2(elemento.id)}" style="margin-right:20px;">
+        		</h:commandLink>
+			</p:column>
+		</p:dataTable>
+	
+	<br></br>
+	   		<p:commandButton value="Regresar" id="Regresar"  action="#{usuarioBean.gotoReporteEquipos()}" style="margin-right:20px;"  />   
+	   		<p:commandButton value="Logout" id="Logout"  action="#{usuarioBean.logout()}" style="margin-right:20px;"  />   	
+	         
+	</h:form>
+	
+	
+</h:body>
+</html>

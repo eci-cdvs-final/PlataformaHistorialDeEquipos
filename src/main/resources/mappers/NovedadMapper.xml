@@ -40,6 +40,20 @@
 			equipoid=#{equipoid}
 	</select>
 	
+	<select id="listarElem" resultMap="NovedadResult"
+		parameterType="int">
+		SELECT
+			n.equipoid,
+			n.elementoid,
+			n.fecha,
+			n.titulo,
+			n.detalle
+		FROM
+			NOVEDAD as n
+		WHERE 
+			elementoID=#{elementoID}
+	</select>
+	
 		<resultMap type='Novedad' id='NovedadResult'>
 		<id property='id' column='id' />
 		<result property='elementoId' column='elementoid'/>

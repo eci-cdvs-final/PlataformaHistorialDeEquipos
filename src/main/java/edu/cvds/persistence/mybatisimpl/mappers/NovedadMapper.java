@@ -20,4 +20,6 @@ public interface NovedadMapper {
 	public void registarNovedadElemento( @Param("elementoid")int elementoid,@Param("equipoid") int equipoid,@Param("fecha") Date fecha, @Param("titulo")String titulo,@Param("usuarioid") String usuarioid,
 			@Param("detalle")String detalle);
 
+	public List<Novedad> listarElem(@Param("elementoID")int elementoId);
+
 }

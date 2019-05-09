@@ -54,5 +54,7 @@ public interface LaboratorioServices {
 
 	public void desasociarLaboratorio(int id);
 
+	public List<Novedad> listarNovedadesElem(int elementoId);
+
 
 }	

@@ -156,4 +156,9 @@ public class LaboratorioServicesImpl implements LaboratorioServices {
 
 	}
 
+		@Override
+		public List<Novedad> listarNovedadesElem(int elementoId) {
+			return novedadDAO.listarElem(elementoId);
+		}
+
 }

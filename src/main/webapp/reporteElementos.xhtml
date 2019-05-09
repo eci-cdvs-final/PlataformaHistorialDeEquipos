@@ -39,9 +39,18 @@
 				<h:outputText value="#{elemento.nombre}" />
 			</p:column>
 			<p:column  headerText="Reporte de Novedades">
-				<p:button outcome="novedades" value="Ver Novedades" actionListener="#{novedadBean.setEquipoId(elem)}">
-					<f:param name="equipoid" value="#{elemento.id}" />
+				<p:button outcome="novedadesElemento" value="Ver Novedades" actionListener="#{novedadBean.setElementoId(elem)}">
+					<f:param name="elementoId" value="#{elemento.id}" />
 				</p:button>
+			</p:column>
+			
+			<p:column  headerText="Revisar Equipo">
+			<p:button outcome="elementos" value="Administrar Elemento">
+				<f:param name="elementoid" value="#{elemento.id}" />
+			</p:button>
+			</p:column>
+			<p:column  headerText="Dar de baja">
+				<p:commandButton outcome="reporteEquipos" value="Dar de baja" actionListener="#{equipoBean.darDeBaja(equipo.id)}" style="margin-right:20px;" styleClass="ui-priority-primary" />
 			</p:column>
 		</p:dataTable>
 	

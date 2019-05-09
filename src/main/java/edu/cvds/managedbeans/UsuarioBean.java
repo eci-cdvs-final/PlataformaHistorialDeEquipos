@@ -160,6 +160,15 @@ public class UsuarioBean extends BasePageBean  {
 		}
 	}
 	
+	public void gotoReporteElementos() {
+		try {
+			FacesContext.getCurrentInstance().getExternalContext().redirect("reporteElementos.xhtml");
+		} catch (Exception e) {
+			FacesContext context = FacesContext.getCurrentInstance();
+	        context.addMessage(null, new FacesMessage("Error", e.getMessage()));
+		}
+	}
+	
 	
 	public void gotoCrearLaboratorio() {
 		try {

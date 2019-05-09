@@ -17,4 +17,6 @@ public interface NovedadDAO {
 	public void registarNovedadElemento(int elementoid, int equipoid, Date fecha, String titulo, String usuarioid,
 			String detalle);
 
+	public List<Novedad> listarElem(int elementoId);
+
 }

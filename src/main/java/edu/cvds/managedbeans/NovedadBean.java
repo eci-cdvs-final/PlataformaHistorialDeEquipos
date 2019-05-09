@@ -69,6 +69,11 @@ public class NovedadBean extends BasePageBean {
 		FacesContext context = FacesContext.getCurrentInstance();
 		return laboratorioServices.listarNovedades(equipoId);
 	}
+	
+	public List<Novedad> getNovedades3() {
+		FacesContext context = FacesContext.getCurrentInstance();
+		return laboratorioServices.listarNovedadesElem(elementoId);
+	}
 
 	public int getId() {
 		return id;

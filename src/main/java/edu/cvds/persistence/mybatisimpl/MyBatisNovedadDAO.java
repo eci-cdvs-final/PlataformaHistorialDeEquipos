@@ -41,4 +41,9 @@ public class MyBatisNovedadDAO implements NovedadDAO {
 		
 	}
 
+	@Override
+	public List<Novedad> listarElem(int elementoId) {
+		return novedadMapper.listarElem(elementoId);
+	}
+
 }
