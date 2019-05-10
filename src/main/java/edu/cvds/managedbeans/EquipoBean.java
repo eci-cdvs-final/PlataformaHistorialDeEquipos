@@ -1,5 +1,6 @@
 package edu.cvds.managedbeans;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
@@ -152,7 +153,9 @@ public class EquipoBean extends BasePageBean {
 	public void darDeBaja(int equipo) {
 		try {
 			FacesContext context = FacesContext.getCurrentInstance();
+			java.util.Date fecha = new Date();
 			laboratorioServices.darDeBajaEquipo(equipo);
+			laboratorioServices.registrarNovedadEquipo(equipo, fecha, "daño Irreparable", laboratorioServices.getUsuario(SecurityUtils.getSubject().getPrincipal().toString()).getUserName(), "se dio de baja al equipo por daños irreparables");
 		}
 		catch(Exception e) {
 			FacesContext context = FacesContext.getCurrentInstance();
