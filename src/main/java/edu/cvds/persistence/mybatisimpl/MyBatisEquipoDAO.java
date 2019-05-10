@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.google.inject.Inject;
 
+import edu.cvds.entities.Elemento;
 import edu.cvds.entities.Equipo;
 import edu.cvds.persistence.EquipoDAO;
 import edu.cvds.persistence.mybatisimpl.mappers.EquipoMapper;
@@ -55,6 +56,11 @@ public class MyBatisEquipoDAO implements EquipoDAO {
 	@Override
 	public void darDeBajaEquipo(int equipo) {
 		equipoMapper.darDeBajaEquipo(equipo);
+	}
+
+	@Override
+	public List<Elemento> equipo(int id) {
+		return equipoMapper.equipo(id);
 	}
 
 

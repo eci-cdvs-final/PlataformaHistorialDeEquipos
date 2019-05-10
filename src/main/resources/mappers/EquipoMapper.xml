@@ -75,5 +75,17 @@
 		UPDATE equipo set activo=False where id=#{equipo}
 	</update>
 	
+	<select id="equipo" resultMap="EquipoResult"
+		parameterType="int">
+		SELECT
+			e.id,
+			e.nombre,
+			e.laboratorioID,
+			e.activo
+		FROM
+			EQUIPO as e
+		WHERE e.id=#{id}
+	</select>
+	
 
 	</mapper>

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+import edu.cvds.entities.Elemento;
 import edu.cvds.entities.Equipo;
 
 public interface EquipoMapper {
@@ -29,5 +30,8 @@ public interface EquipoMapper {
 	public void desasociar( @Param("id") int id);
 
 	public void darDeBajaEquipo(@Param("equipo")int equipo);
+
+
+	public List<Elemento> equipo(@Param("id")int id);
 
 }

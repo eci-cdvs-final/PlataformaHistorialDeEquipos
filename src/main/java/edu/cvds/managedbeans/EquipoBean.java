@@ -13,6 +13,7 @@ import org.apache.shiro.SecurityUtils;
 
 import com.google.inject.Injector;
 
+import edu.cvds.entities.Elemento;
 import edu.cvds.entities.Equipo;
 import edu.cvds.services.LaboratorioServices;
 
@@ -159,6 +160,15 @@ public class EquipoBean extends BasePageBean {
 	        context.addMessage("registrarEquipo.xhtml", new FacesMessage("Error", "No fue posible Desasociar"));
 		}
 
+	}
+	
+	public List<Elemento> equipo() {
+		System.out.println(id);
+		System.out.println(id);
+		System.out.println(id);
+		System.out.println(id);
+		System.out.println(id);
+		return laboratorioServices.equipo(id);
 	}
 	
 }

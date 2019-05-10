@@ -60,5 +60,7 @@ public interface LaboratorioServices {
 
 	public void darDeBajaElemento(int elemento);
 
+	public List<Elemento> equipo(int id);
+
 
 }	

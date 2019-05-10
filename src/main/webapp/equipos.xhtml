@@ -16,11 +16,27 @@
 
 <f:metadata>
 	<f:viewParam name="equipoid" value="#{elementoBean.idEqui}"/>
+	<f:viewParam name="equipoid" value="#{equipoBean.id}"/>
 </f:metadata>
 
 <h:body>
 	<h1>Administrar Equipo #{elementoBean.idEqui}</h1>
 	<h:form>
+	
+		<p:dataTable id="equi_table" var="equipo" value="#{equipoBean.equipo()}" >
+		<p:column var="equi"  headerText="Equipos Disponibles">
+			<h:outputText value="#{equipo.id}" />
+		</p:column>
+		<p:column  headerText="Laboratorio al que pertenece">
+			<h:outputText value="#{equipo.laboratorioId}" />
+		</p:column>
+		<p:column  headerText="Estado">
+			<h:outputText value="#{equipo.activo}" />
+		</p:column>
+		<p:column  headerText="Nombre"  filterMatchMode="contains">
+			<h:outputText value="#{equipo.nombre}" />
+		</p:column>
+	</p:dataTable>
 		
 		<h3>Elementos del Equipo</h3>
 		<p:dataTable id="elemento_table" var="elemento" value="#{elementoBean.getElementos2()}">

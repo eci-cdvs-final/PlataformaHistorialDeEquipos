@@ -171,4 +171,9 @@ public class LaboratorioServicesImpl implements LaboratorioServices {
 			elementoDAO.darDeBajaElemento(elemento);
 		}
 
+		@Override
+		public List<Elemento> equipo(int id) {
+			return equipoDAO.equipo(id);
+		}
+
 }

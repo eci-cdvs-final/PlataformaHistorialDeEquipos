@@ -2,6 +2,7 @@ package edu.cvds.persistence;
 
 import java.util.List;
 
+import edu.cvds.entities.Elemento;
 import edu.cvds.entities.Equipo;
 
 public interface EquipoDAO {
@@ -22,6 +23,8 @@ public interface EquipoDAO {
 	public void desasociar(int id);
 
 	public void darDeBajaEquipo(int equipo);
+
+	public List<Elemento> equipo(int id);
 
 
 }
