@@ -21,7 +21,10 @@
 
 ![](https://github.com/eci-cdvs-final/PlataformaHistorialDeEquipos/blob/master/img/ModeloE-R.PNG) 
 
-* Diagrama de clases (hacerlo mediante ingeniería inversa)
+* Diagrama de clases 
+
+![](https://github.com/eci-cdvs-final/PlataformaHistorialDeEquipos/blob/master/img/Diagramadeclases.JPG) 
+
 * Descripción de la arquitectura (capas) y del Stack de tecnologías utilizado (PrimeFaces, Guice, QuickTheories, PostgreSQL).
 * https://plataformashisorialequipo.herokuapp.com/faces/login.xhtml
 
