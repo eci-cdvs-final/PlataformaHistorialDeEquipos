@@ -14,6 +14,9 @@
 * Julián Velasco
 #### Descripción del producto:
 * Descripción General
+
+	Con esta aplicación podremos registrar, aociar, modificar y eliminar los elemtos necesarios para administrar las salas de informática de la decanatura de sistemas, permitiendo un control más visual y organizado de todos los cambios que se realizan a diario en las diferentes aulas.
+
 * Manual de usuario
 * Imágenes y descripción de las funcionalidades más importantes
 #### Arquitectura y Diseño detallado:
@@ -26,6 +29,13 @@
 ![](https://github.com/eci-cdvs-final/PlataformaHistorialDeEquipos/blob/master/img/Diagramadeclases.JPG) 
 
 * Descripción de la arquitectura (capas) y del Stack de tecnologías utilizado (PrimeFaces, Guice, QuickTheories, PostgreSQL).
+
+	Para la capa de presentación se implementó la infraestructura de PrimeFaces.
+	Guice brinda el mecanismo que nos permite atrapar y transportar la información desde la capa de presentacion hasta la base de datos y viceversa, y los objetos de interactuan a lo largo de los distintos procesos.
+	PostgreSQL nos brinda la infraestructura necesaria para crear y manipular la base de datos requerida para el proyecto y su desarrollo.
+	QuickTheories nos provee herramientas para poder ejecutar pruebas, estas nos permiten verificar y corregir el funcionamiento de cada una de las funcionalidades aquí implementadas
+	
+
 * https://plataformashisorialequipo.herokuapp.com/faces/login.xhtml
 
 Usuario: claudia.santiago
@@ -103,20 +113,21 @@ Contraseña: Admin1234
 
 * Imagen del 'sprint-backlog'
 
--
+![](https://github.com/eci-cdvs-final/PlataformaHistorialDeEquipos/blob/master/img/Sprint3_backlog.png)
 
 * Imagen del 'sprint-burndown chart' (sacado del sprint-backlog anterior), y una descripción breve de los problemas encontrados y mejoras realizadas al proceso.
 
--
+![](https://github.com/eci-cdvs-final/PlataformaHistorialDeEquipos/blob/master/img/Sprint3_burndown.png)
 
 * Se hizo bien
 
-	-
+	A lo largo de las dos semanas del Sprint, logramos trabajar más distribuidamente a lo largo de los días en comparación con los sprints pasados.
+	Se logró completar las actividades faltantes del sprin pasado.
 
 * Problemas
 
-	-
+	No todas las pruebas de las historias de usuario quedaron implememntadas
 
 * Nos comprometememos
 
-   -
+   A aplicar la metodología Scrun de la forma correcta en todos los proyectos que lo requieran
